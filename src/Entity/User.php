@@ -2,15 +2,14 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
-use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(fields={"email"}, message="There is already an account with this email")
  */
-class User implements UserInterface
+class User
 {
     /**
      * @ORM\Id()
@@ -20,24 +19,128 @@ class User implements UserInterface
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=180, unique=true)
+     * @ORM\Column(type="string", length=25)
+     */
+    private $username;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $password;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $first_name;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $last_name;
+
+    /**
+     * @ORM\Column(type="string", length=320)
      */
     private $email;
 
     /**
-     * @ORM\Column(type="json")
+     * @ORM\Column(type="date")
      */
-    private $roles = [];
+    private $date_of_birth;
 
     /**
-     * @var string The hashed password
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="text", nullable=true)
      */
-    private $password;
+    private $adress;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $loyalty_points;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $is_confirmed;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Reviews", mappedBy="user", orphanRemoval=true)
+     */
+    private $reviews;
+
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Cart", mappedBy="user", cascade={"persist", "remove"})
+     */
+    private $cart;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Bills", mappedBy="user")
+     */
+    private $bills;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Deals", mappedBy="user")
+     */
+    private $deals;
+
+    public function __construct()
+    {
+        $this->reviews = new ArrayCollection();
+        $this->bills = new ArrayCollection();
+        $this->deals = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getUsername(): ?string
+    {
+        return $this->username;
+    }
+
+    public function setUsername(string $username): self
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->password;
+    }
+
+    public function setPassword(string $password): self
+    {
+        $this->password = $password;
+
+        return $this;
+    }
+
+    public function getFirstName(): ?string
+    {
+        return $this->first_name;
+    }
+
+    public function setFirstName(string $first_name): self
+    {
+        $this->first_name = $first_name;
+
+        return $this;
+    }
+
+    public function getLastName(): ?string
+    {
+        return $this->last_name;
+    }
+
+    public function setLastName(string $last_name): self
+    {
+        $this->last_name = $last_name;
+
+        return $this;
     }
 
     public function getEmail(): ?string
@@ -52,64 +155,158 @@ class User implements UserInterface
         return $this;
     }
 
-    /**
-     * A visual identifier that represents this user.
-     *
-     * @see UserInterface
-     */
-    public function getUsername(): string
+    public function getDateOfBirth(): ?\DateTimeInterface
     {
-        return (string) $this->email;
+        return $this->date_of_birth;
     }
 
-    /**
-     * @see UserInterface
-     */
-    public function getRoles(): array
+    public function setDateOfBirth(\DateTimeInterface $date_of_birth): self
     {
-        $roles = $this->roles;
-        // guarantee every user at least has ROLE_USER
-        $roles[] = 'ROLE_USER';
+        $this->date_of_birth = $date_of_birth;
 
-        return array_unique($roles);
+        return $this;
     }
 
-    public function setRoles(array $roles): self
+    public function getAdress(): ?string
     {
-        $this->roles = $roles;
+        return $this->adress;
+    }
+
+    public function setAdress(?string $adress): self
+    {
+        $this->adress = $adress;
+
+        return $this;
+    }
+
+    public function getLoyaltyPoints(): ?int
+    {
+        return $this->loyalty_points;
+    }
+
+    public function setLoyaltyPoints(?int $loyalty_points): self
+    {
+        $this->loyalty_points = $loyalty_points;
+
+        return $this;
+    }
+
+    public function getIsConfirmed(): ?bool
+    {
+        return $this->is_confirmed;
+    }
+
+    public function setIsConfirmed(bool $is_confirmed): self
+    {
+        $this->is_confirmed = $is_confirmed;
 
         return $this;
     }
 
     /**
-     * @see UserInterface
+     * @return Collection|Reviews[]
      */
-    public function getPassword(): string
+    public function getReviews(): Collection
     {
-        return (string) $this->password;
+        return $this->reviews;
     }
 
-    public function setPassword(string $password): self
+    public function addReview(Reviews $review): self
     {
-        $this->password = $password;
+        if (!$this->reviews->contains($review)) {
+            $this->reviews[] = $review;
+            $review->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReview(Reviews $review): self
+    {
+        if ($this->reviews->contains($review)) {
+            $this->reviews->removeElement($review);
+            // set the owning side to null (unless already changed)
+            if ($review->getUser() === $this) {
+                $review->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getCart(): ?Cart
+    {
+        return $this->cart;
+    }
+
+    public function setCart(Cart $cart): self
+    {
+        $this->cart = $cart;
+
+        // set the owning side of the relation if necessary
+        if ($cart->getUser() !== $this) {
+            $cart->setUser($this);
+        }
 
         return $this;
     }
 
     /**
-     * @see UserInterface
+     * @return Collection|Bills[]
      */
-    public function getSalt()
+    public function getBills(): Collection
     {
-        // not needed when using the "bcrypt" algorithm in security.yaml
+        return $this->bills;
+    }
+
+    public function addBill(Bills $bill): self
+    {
+        if (!$this->bills->contains($bill)) {
+            $this->bills[] = $bill;
+            $bill->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBill(Bills $bill): self
+    {
+        if ($this->bills->contains($bill)) {
+            $this->bills->removeElement($bill);
+            // set the owning side to null (unless already changed)
+            if ($bill->getUser() === $this) {
+                $bill->setUser(null);
+            }
+        }
+
+        return $this;
     }
 
     /**
-     * @see UserInterface
+     * @return Collection|Deals[]
      */
-    public function eraseCredentials()
+    public function getDeals(): Collection
     {
-        // If you store any temporary, sensitive data on the user, clear it here
-        // $this->plainPassword = null;
+        return $this->deals;
+    }
+
+    public function addDeal(Deals $deal): self
+    {
+        if (!$this->deals->contains($deal)) {
+            $this->deals[] = $deal;
+            $deal->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDeal(Deals $deal): self
+    {
+        if ($this->deals->contains($deal)) {
+            $this->deals->removeElement($deal);
+            $deal->removeUser($this);
+        }
+
+        return $this;
     }
 }
