@@ -2,14 +2,21 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(
+ *  fields = {"email"},
+ *  message = "Un compte lié à cette adresse email existe déjà"
+ * )
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -25,9 +32,13 @@ class User
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Length(min="8", minMessage="Votre mot de passe doit être de 8 caractères minimum")
      */
     private $password;
 
+    /**
+     * @Assert\EqualTo(propertyPath="password", message="Votre mot de passe et votre mot de passe de confirmation ne correspondent pas")
+     */
     public $confirm_password;
 
     /**
@@ -42,6 +53,7 @@ class User
 
     /**
      * @ORM\Column(type="string", length=320)
+     * @Assert\Email()
      */
     private $email;
 
@@ -310,5 +322,17 @@ class User
         }
 
         return $this;
+    }
+
+    public function eraseCredentials() {
+
+    }
+
+    public function getSalt() {
+
+    }
+
+    public function getRoles() {
+        return ['ROLE_USER'];
     }
 }
