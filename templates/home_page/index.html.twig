@@ -6,6 +6,10 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('home') }}
         {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('homePageJs') }}
+        {% endblock %}
+
     </head>
     <body>
 
@@ -24,9 +28,11 @@
                 <button class="menuSideBar"> > Catégorie 4 </button>
                 
             </div>
-            <button class="boutonHautDePage"> ↑ </button>
-                <div class="boutonLogo"></div>
-            <div class="containerCentral">
+                <button id="myBtn" title="Go to top" class="boutonHautDePage"> ↑ </button>
+                <div class="boutonLogo">
+
+                </div>
+                <div class="containerCentral">
                 <div class="containerPreviews">
 
 
@@ -41,6 +47,7 @@
                 
         
         </div>
+
     </body>
 
   </body>
