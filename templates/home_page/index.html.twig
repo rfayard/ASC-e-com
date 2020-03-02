@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}ASC e-commerce{% endblock %}</title>
-        {% block stylesheets %}
-            {{ encore_entry_link_tags('home') }}
-        {% endblock %}
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}ASC e-commerce{% endblock %}</title>
+    {% block stylesheets %}
+    {{ encore_entry_link_tags('home') }}
+    {% endblock %}
+</head>
+
+<body>
 
 
-        <div class="mainContainer">
-            <div class="containerLeftSide"> 
-                <div class="menuSideBar">
-                    <form action="/action_page.php">
+    <div class="mainContainer">
+        <div class="containerLeftSide">
+            <div class="menuSideBar">
+                <form action="/action_page.php">
                     <input type="text" placeholder="Search.." name="search">
                     <button type="submit"><i class="fa fa-search"></i></button>
-                    </form>
-                </div>
-                <button class="menuSideBar"> > Catégorie 1 </button>
-                <button class="menuSideBar"> > Catégorie 2 </button>
-                <button class="menuSideBar"> > Catégorie 3 </button>
-                <button class="menuSideBar"> > Catégorie 4 </button>
-                
+                </form>
             </div>
-            <button class="boutonHautDePage"> ↑ </button>
-                <div class="boutonLogo"></div>
-            <div class="containerCentral">
-                <div class="containerPreviews">
+            <button class="menuSideBar"> > Catégorie 1 </button>
+            <button class="menuSideBar"> > Catégorie 2 </button>
+            <button class="menuSideBar"> > Catégorie 3 </button>
+            <button class="menuSideBar"> > Catégorie 4 </button>
 
-
-
-                </div>
-            </div>
-            <div class="containerRightSide">
-                <button class="boutonEspaceClient">Espace client</button>
-                <button class="boutonPanier">Piano</button>
-                <button class="boutonMentionsLegales">Mentions légales</button>
-            </div>        
-                
-        
         </div>
-    </body>
+        <button class="boutonHautDePage"> ↑ </button>
+        <div class="boutonLogo"></div>
+        <div class="containerCentral">
+            <div class="containerPreviews">
 
-  </body>
+
+
+            </div>
+        </div>
+        <div class="containerRightSide">
+            <button class="boutonEspaceClient">Espace client</button>
+            <button class="boutonPanier">Piano</button>
+            <button class="boutonMentionsLegales">Mentions légales</button>
+        </div>
+
+
+    </div>
+</body>
+
+</body>
+
 </html>
