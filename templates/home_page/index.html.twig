@@ -22,22 +22,49 @@
                     <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <button class="menuSideBar"> > Catégorie 1 </button>
-                <button class="menuSideBar"> > Catégorie 2 </button>
-                <button class="menuSideBar"> > Catégorie 3 </button>
-                <button class="menuSideBar"> > Catégorie 4 </button>
+
+                {% for categories in categories %}
+                <button class="menuSideBar"> > {{ categories.name }} </button>
+                {% endfor %}
                 
             </div>
                 <button id="myBtn" title="Go to top" class="boutonHautDePage"> ↑ </button>
                 <div class="boutonLogo">
+                    <div class="titre"> ASC e-Commerce</div>
+                </div>
+            <div class="containerCentral">
+            <div class="coinPromos">
+                    <div class="containerPromo1">
+                        <div class="promo1">
+                            <div class="containerImagePromo">   Promo !</div>
+                           
+                        </div>
+                    </div>
+                    <div class="containerPromo2">
+                        <div class="promo2">
+                            <div class="containerImagePromo">   Promo !</div>
+                           
+                        </div>
+                        <div class="promo3">
+                            <div class="containerImagePromo">   Promo !</div>
+                           
+                        </div>
+                    </div>
+                   </div> 
+                
+                <div class="carousel">
+
 
                 </div>
-                <div class="containerCentral">
                 <div class="containerPreviews">
-
-
-
+                    {% for categories in categories %}
+               
+                    <div class="preview" {#name="{{categories.name}}"#}>
+                        <div class="surtexte"> {{ categories.name }} </div>
+                    </div>
+                    {% endfor %}
                 </div>
+            
             </div>
             <div class="containerRightSide">
                 <button class="boutonEspaceClient">Espace client</button>
