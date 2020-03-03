@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your account
+{% endblock %}
+
+{% block body %}
+
+	{% if app.user %}
+		{{form_start(formU)}}
+		{{form_row(formU.first_name)}}
+		{{form_row(formU.last_name)}}
+		{{form_row(formU.date_of_birth)}}
+		{{form_row(formU.email)}}
+		{{form_row(formU.username)}}
+		{{form_row(formU.password)}}
+		{{form_row(formU.confirm_password)}}
+		{{form_start(formA)}}
+		{{form_row(formA.name)}}
+		{{form_row(formA.first_name)}}
+		{{form_row(formA.postal_adress)}}
+		{{form_row(formA.postal_adress_2)}}
+		{{form_row(formA.zip_code)}}
+		{{form_row(formA.city)}}
+		{{form_row(formA.country)}}
+		{{form_row(formA.phone_number)}}
+		{{form_row(formA.adress_name)}}
+		{{form_end(formA)}}
+		<button type="submit" class="btn btn-success">Inscription !</button>
+		{{form_end(formU)}}
+	{% else %}
+		<h2>Vous n'êtes pas connecté !<h2>
+			{% endif %}
+
+		{% endblock %}

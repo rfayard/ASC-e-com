@@ -97,11 +97,17 @@ class User implements UserInterface
      */
     private $deals;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Adresses", mappedBy="user", orphanRemoval=true)
+     */
+    private $adresses;
+
     public function __construct()
     {
         $this->reviews = new ArrayCollection();
         $this->bills = new ArrayCollection();
         $this->deals = new ArrayCollection();
+        $this->adresses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -334,5 +340,36 @@ class User implements UserInterface
 
     public function getRoles() {
         return ['ROLE_USER'];
+    }
+
+    /**
+     * @return Collection|Adresses[]
+     */
+    public function getAdresses(): Collection
+    {
+        return $this->adresses;
+    }
+
+    public function addAdress(Adresses $adress): self
+    {
+        if (!$this->adresses->contains($adress)) {
+            $this->adresses[] = $adress;
+            $adress->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAdress(Adresses $adress): self
+    {
+        if ($this->adresses->contains($adress)) {
+            $this->adresses->removeElement($adress);
+            // set the owning side to null (unless already changed)
+            if ($adress->getUser() === $this) {
+                $adress->setUser(null);
+            }
+        }
+
+        return $this;
     }
 }
