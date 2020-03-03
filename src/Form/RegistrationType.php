@@ -2,11 +2,12 @@
 
 namespace App\Form;
 
-use App\Entity\User;
-use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\AbstractType;
+use App\Entity\User;
 
 class RegistrationType extends AbstractType
 {
@@ -15,7 +16,7 @@ class RegistrationType extends AbstractType
         $builder
             ->add('first_name')
             ->add('last_name')
-            ->add('date_of_birth')
+            ->add('date_of_birth', BirthdayType::class)
             ->add('email')
             ->add('username')
             ->add('password', PasswordType::class)
