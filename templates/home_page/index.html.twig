@@ -26,7 +26,7 @@
                 </div>
 
                 {% for categories in categories %}
-                <a href="#{{ categories.name }}" class="menuSideBar"> > {{ categories.name }} </a>
+                    <a href="#{{ categories.name }}" class="menuSideBar"> > {{ categories.name }} </a>
                 {% endfor %}
                 
             </div>
@@ -63,10 +63,11 @@
                 </div>
                 <div class="containerPreviews">
                     {% for categories in categories %}
-                    <a name="{{categories.name}}"></a>
-                    <div class="preview">
-                        <div class="surtexte"> {{ categories.name }} </div>
-                    </div>
+                        <a href="{{ path('category', {'id': categories.id}) }}" name="{{categories.name}}" style="text-decoration:none">
+                            <div class="preview">
+                                <div class="surtexte"> {{ categories.name }} </div>
+                            </div>
+                        </a>
                     {% endfor %}
                 </div>
             
@@ -88,3 +89,9 @@
 
   </body>
 </html>
+
+
+    {# {% for category in categories %}
+        <a href="{{ path('category', {'id': category.id}) }}"> {{ category.name }}</a>
+    {% endfor %} #}
+

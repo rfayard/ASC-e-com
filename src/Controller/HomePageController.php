@@ -37,3 +37,10 @@ class HomePageController extends AbstractController
         ]);
     }
 }
+// $repo = $this->getDoctrine()->getRepository(Categories::class);
+
+//     $categories = $repo->findAll();
+
+//     return $this->render('home_page/index.html.twig', [
+//         'controller_name' => 'HomePageController',
+//         'categories' => $categories

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello GategoryController!{% endblock %}
+
+{% block body %}
+
+    <div class="container mt-5">
+
+        <h1>{{ category.name }}</1>
+
+        <div class="row">
+            {% for product in products %}
+                <div class="col-md-4 p-3">
+                {# {{ dump(product) }} #}
+                    <img class="w-100" src="{{ product.image }}" alt="">
+                    <h4>{{ product.name }}</h4>
+                    <h6>{{ product.description }}</h6>
+                    <h6>Le prix sans taxe : {{ product.getPriceWithoutTaxes() }} €</h6>
+                    <h6>Le prix avec taxe : {{ product.getPriceAllTaxesIncluded() }} €</h6>
+                    {% if product.getIsAvailable() %}
+                        <h6>Disponibile</h6> 
+                    {% else %}
+                        <h6>Indisponibile</h6> 
+                    {% endif %}
+                </div>
+            {% endfor %}
+            
+        </div>
+    </div>
+
+{% endblock %}
