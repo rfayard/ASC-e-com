@@ -40,7 +40,7 @@
                         <div class="promo1">
                             <div class="containerImagePromo">   Promo !
                             <br>
-                            Profitez de {{ deals[3].getDiscountPercentage()}} % de réduction sur les produits "{{categories[0].name}}" avec le code : {{deals[3].getCode()}}
+                            {# Profitez de {{ deals[3].getDiscountPercentage()}} % de réduction sur les produits "{{categories[0].name}}" avec le code : {{deals[3].getCode()}} #}
                             </div>
                            
                         </div>
@@ -74,6 +74,10 @@
             <div class="containerRightSide">
                 <button class="boutonEspaceClient">Espace client</button>
                 <button class="boutonPanier">Piano</button>
+                
+                <button id="frenchButton" title="Changer de langue" class="frenchButton"></button>
+                <button id="englishButton" title="Changer de langue" class="englishButton"></button>
+                
                 <button class="boutonMentionsLegales">Mentions légales</button>
             </div>        
                 
