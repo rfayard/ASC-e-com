@@ -7,7 +7,7 @@ body{
 
 .mainContainer{
     display: flex;
-   width: 100vw;
+   width: 100%;
    height: auto;   
 }
 
@@ -18,8 +18,7 @@ body{
    background-color: crimson;
    width: 13vw;
    height: 85vh;
-   margin-left: 0.5vw;
-   clip-path: polygon(100% 0, 100% 66%, 9% 100%, 0 100%, 0 0);
+   clip-path: polygon(100% 0, 100% 66%, 0 100%, 0 100%, 0 0);
    z-index: 2;
 }
 
@@ -31,7 +30,7 @@ body{
     position: fixed;
     z-index: 2;
     bottom: 0vh;
-    left: 9vw;
+    left: 8.5vw;
     clip-path: polygon(0 80%, 100% 0, 100% 100%, 0 100%);
     align-items: flex-end;
     justify-content: center;
@@ -113,7 +112,7 @@ body{
     position: fixed;
     z-index: 2;
     right: 1vw;
-    width: 20vw;
+    width: 13vw;
     height: auto;
     margin-left: 2vw;
     /* background-color: rgba(0, 0, 0, 0.082); */
