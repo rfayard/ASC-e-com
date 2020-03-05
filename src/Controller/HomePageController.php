@@ -4,7 +4,12 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Cart;
 use App\Entity\Categories;
+use App\Entity\Deals;
+use App\Entity\Products;
+use App\Entity\Reviews;
+use App\Entity\User;
 
 class HomePageController extends AbstractController
 {
@@ -13,13 +18,29 @@ class HomePageController extends AbstractController
      */
     public function index()
     {
-        $repo = $this->getDoctrine()->getRepository(Categories::class);
+        $em = $this->getDoctrine()->getManager();
+        $cart = $em->getRepository(Cart::class)->findAll();
+        $categories = $em->getRepository(Categories::class)->findAll();
+        $deals = $em->getRepository(Deals::class)->findAll();
+        $products = $em->getRepository(Products::class)->findAll();
+        $reviews = $em->getRepository(Reviews::class)->findAll();
+        $user = $em->getRepository(User::class)->findAll();
 
-        $categories = $repo->findAll();
 
         return $this->render('home_page/index.html.twig', [
-            'controller_name' => 'HomePageController',
-            'categories' => $categories
+            'cart' => $cart,
+            'categories' => $categories,
+            'deals' => $deals,
+            'products' => $products,
+            'reviews' => $reviews,
+            'user' => $user
         ]);
     }
 }
+// $repo = $this->getDoctrine()->getRepository(Categories::class);
+
+//     $categories = $repo->findAll();
+
+//     return $this->render('home_page/index.html.twig', [
+//         'controller_name' => 'HomePageController',
+//         'categories' => $categories
