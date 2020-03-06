@@ -36,11 +36,29 @@ class HomePageController extends AbstractController
             'user' => $user
         ]);
     }
+
+
+
+    /**
+     * @Route("/cart", name="cart")
+     */
+
+    public function gotToCart()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $cart = $em->getRepository(Cart::class)->findAll();
+        $categories = $em->getRepository(Categories::class)->findAll();
+        $products = $em->getRepository(Products::class)->findAll();
+        $user = $em->getRepository(User::class)->findAll();
+
+        return $this->render('cart/index.html.twig', [
+            'cart' => $cart,
+            'categories' => $categories,
+            'products' => $products,
+            'user' => $user
+        ]);
+
+    }
+
 }
-// $repo = $this->getDoctrine()->getRepository(Categories::class);
-
-//     $categories = $repo->findAll();
-
-//     return $this->render('home_page/index.html.twig', [
-//         'controller_name' => 'HomePageController',
-//         'categories' => $categories

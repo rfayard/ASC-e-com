@@ -45,7 +45,7 @@ body{
     position: absolute;
     top: 1vh;
     left: 25vw;
-    clip-path: polygon(100% 0, 100% 15%, 9% 100%, 0 100%, 0 0);
+    clip-path: polygon(100% 0, 100% 19%, 20% 100%, 0 100%, 0 0);
 }
 
 .titre{
@@ -87,7 +87,7 @@ body{
     background-color: rgba(93, 195, 195, 0.589);
     justify-content: center;
     align-items: center;
-    margin-bottom: 8vh;
+    z-index: 0;
 }
 
 .preview:hover{
@@ -99,7 +99,12 @@ body{
     background-color: rgba(69, 148, 148, 0.657);
     justify-content: center;
     align-items: center;
-    margin-bottom: 8vh;
+    z-index: 0;
+}
+
+.espace{
+    width: 100%;
+    height: 8vh;
 }
 
 .surtexte{
@@ -345,9 +350,10 @@ body{
     margin-top: 2%;
 }
 
-.carousel{
+.carouselContainer{
     display: flex;
     width: 100%;
+    justify-content: center;
     height: 40vh;
     background-color: rgba(247, 255, 247, 0.472);
     margin-top: 5vh;

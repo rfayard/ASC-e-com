@@ -57,10 +57,11 @@
                     </div>
                    </div> 
                 
-                <div class="carousel">
+                <div class="carouselContainer">
 
 
                 </div>
+
                 <div class="containerPreviews">
                     {% for categories in categories %}
                         <a href="{{ path('category', {'id': categories.id}) }}" name="{{categories.name}}" style="text-decoration:none">
@@ -68,13 +69,14 @@
                                 <div class="surtexte"> {{ categories.name }} </div>
                             </div>
                         </a>
+                        <div class="espace"></div>
                     {% endfor %}
                 </div>
             
             </div>
             <div class="containerRightSide">
                 <button class="boutonEspaceClient">Espace client</button>
-                <button class="boutonPanier">Piano</button>
+                <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
                 
                 <button id="frenchButton" title="Changer de langue" class="frenchButton"></button>
                 <button id="englishButton" title="Changer de langue" class="englishButton"></button>
