@@ -1,30 +1,43 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello GategoryController!{% endblock %}
+{% block title %} {{ category.name }} {% endblock %}
 
 {% block body %}
 
-    <div class="container mt-5">
+    <div class="container-fluid p-5">
 
         <h1>{{ category.name }}</1>
 
-        <div class="row">
-            {% for product in products %}
-                <div class="col-md-4 p-3">
-                {# {{ dump(product) }} #}
-                    <img class="w-100" src="{{ product.image }}" alt="">
-                    <h4>{{ product.name }}</h4>
-                    <h6>{{ product.description }}</h6>
-                    <h6>Le prix sans taxe : {{ product.getPriceWithoutTaxes() }} €</h6>
-                    <h6>Le prix avec taxe : {{ product.getPriceAllTaxesIncluded() }} €</h6>
-                    {% if product.getIsAvailable() %}
-                        <h6>Disponibile</h6> 
-                    {% else %}
-                        <h6>Indisponibile</h6> 
-                    {% endif %}
+        <div class="row mt-3">
+            <div class="card col-md-2 d-none d-md-block p-3">
+                <div class="containerPreviews">
+                    {% for categories in categories %}
+                        <h6 class="pt-3"><a href="{{ path('category', {'id': categories.id}) }}" style="text-decoration:none; color:black; font-weight:bold"> {{ categories.name }} </a></h6>
+                    {% endfor %}
                 </div>
-            {% endfor %}
-            
+            </div>
+            <div class="card col-md-10">
+                <div class="row">
+                    {% for product in products %}
+                        <div class="card col-lg-4 col-md-6 p-3">
+                            <a href="{{ path('product', {'id': product.id}) }}" style="text-decoration:none">
+                                <img class="w-100" src="{{ product.image }}" alt="">
+                            </a>
+                            <div class="py-3">
+                                <h5 class="card-title"><a href="{{ path('product', {'id': product.id}) }}" style="text-decoration:none" class="text-dark">{{ product.name }}</a></h5>
+                                <h6><a href="{{ path('product', {'id': product.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
+                                <h6 class="text-danger pt-3">{{ product.getPriceAllTaxesIncluded() }} €</h6>
+                            </div>
+                            {# <h6>Le prix avec taxe : {{ product.getPriceWithoutTaxes() }} €</h6>
+                            {% if product.getIsAvailable() %}
+                                <h6>Disponible</h6> 
+                            {% else %}
+                                <h6>Indisponible</h6> 
+                            {% endif %} #}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
         </div>
     </div>
 

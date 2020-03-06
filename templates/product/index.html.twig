@@ -1,16 +1,30 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{  product.name }}{% endblock %}
+{% block title %} {{ product.name }} {% endblock %}
 
 {% block body %}
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">{{  product.name }}</h5>
-    <p class="card-text">{{  product.description }}</p>
-    <p class="card-text"><small class="text-muted">{{  product.price }} €</small></p>
-  </div>
-  <img class="card-img-bottom" src="{{ asset('build/images/' ~ product.image ) }}" alt="{{  product.name }}">
-  <a href="{{ path('product', {'id': product.id}) }}?addCart=true" class="btn btn-primary">Ajouter au panier</a>
-</div>
 
+<div class="container-fluid p-5">
+    <div class="row">
+        <div class="card col-md-2 d-none d-md-block p-3">Left Side = Publicité / Gategories...</div>
+        <div class="card col-md-10">
+            <div class="row">
+                <div class="col-md-4 p-3">
+                    <img class="w-100" src="{{ product.image }}" alt="">
+                    <div class="border-bottom mt-5"></div>
+                </div>
+                <div class="col-md-5 p-3">
+                    <h4>{{ product.name }}</h4>
+                    <blockquote class="">
+                        <p>{{ product.description }}</p>
+                    </blockquote>
+                </div>
+                <div class="col-md-3 card p-5 text-center ">
+                    <h3 class="font-weight-bold text-danger">{{ product.getPriceAllTaxesIncluded() }} €</h3>
+                    <a class="btn btn-success font-weight-bold mt-5 w-100" href="#">Ajouter au Panier</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
