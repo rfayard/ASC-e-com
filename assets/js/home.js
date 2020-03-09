@@ -54,27 +54,92 @@ let largeurVue = window.innerWidth;
 let ratioHorizontal = largeurVue / hauteurVue;
 let intervalleCheckViewport = window.setInterval(checkConstant, 500); 
 
+let listeCategories = document.getElementsByClassName("preview");
+let menuSidebar = document.getElementsByClassName("containerLeftSide");
+let affichageSidebar = false;
+
+
+function responsiveComputer(){
+    console.log("on passe en horizontal");
+    for (let i = 0; i < listeCategories.length; i++) {
+        listeCategories[i].classList.remove("previewPad");
+        listeCategories[i].classList.remove("previewPhone");
+        listeCategories[i].classList.add("previewComputer");
+    }
+    menuSidebar[0].classList.remove("containerLeftSidePad");
+    menuSidebar[0].classList.remove("containerLeftSidePhone");
+    menuSidebar[0].classList.add("containerLeftSideComputer");
+    document.getElementById("myBurgerBtn").style.display = "none";
+}
+
+function responsivePad(){
+    console.log("on passe en carré");
+    for (let i = 0; i < listeCategories.length; i++) {
+        listeCategories[i].classList.remove("previewPhone");
+        listeCategories[i].classList.remove("previewComputer");
+        listeCategories[i].classList.add("previewPad");
+    }   
+    menuSidebar[0].classList.remove("containerLeftSideComputer");
+    menuSidebar[0].classList.remove("containerLeftSidePhone");
+    menuSidebar[0].classList.add("containerLeftSidePad");
+    document.getElementById("myBurgerBtn").style.display = "none";
+}
+
+function responsivePhone(){
+    console.log("on passe en vertical");
+    for (let i = 0; i < listeCategories.length; i++) {
+        listeCategories[i].classList.remove("previewPad");
+        listeCategories[i].classList.remove("previewComputer");
+        listeCategories[i].classList.add("previewPhone");
+    }
+    menuSidebar[0].classList.remove("containerLeftSidePad");
+    menuSidebar[0].classList.remove("containerLeftSideComputer");
+    menuSidebar[0].classList.add("containerLeftSidePhone");
+    document.getElementById("myBurgerBtn").style.display = "flex";
+}
+
 function ratioViewport() {
     hauteurVue = window.innerHeight;
     largeurVue = window.innerWidth;
     ratioHorizontal = largeurVue / hauteurVue;
     
-        if ((largeurVue / hauteurVue) > (11/9)) {
+        if ((largeurVue / hauteurVue) > (12/9)) {
             ratioHorizontal == (largeurVue / hauteurVue); 
-            console.log(ratioHorizontal);
-        } else if (((largeurVue / hauteurVue) <= (11/9)) && ((largeurVue / hauteurVue) > (0.9))) {
+           // console.log("computerSize " + ratioHorizontal);
+            responsiveComputer();
+        } else if (((largeurVue / hauteurVue) <= (12/9)) && ((largeurVue / hauteurVue) > (0.97))) {
             ratioHorizontal == (largeurVue / hauteurVue); 
-            console.log(ratioHorizontal);
-        }else if((largeurVue / hauteurVue) <= (0.9)) {
+           // console.log("padSize " + ratioHorizontal);
+            responsivePad();
+        }else if((largeurVue / hauteurVue) <= (0.97)) {
             ratioHorizontal == (largeurVue / hauteurVue); 
-            console.log(ratioHorizontal);
+            //console.log("phoneSize " + ratioHorizontal);
+            responsivePhone();
         }
     }
+
+
+    window.addEventListener("DOMContentLoaded", function() {
+        let mybutton = document.getElementById("myBurgerBtn");
+        mybutton.addEventListener("click", function(){
+            if(affichageSidebar == false){
+                menuSidebar[0].classList.remove("containerLeftSidePhone");
+                menuSidebar[0].classList.add("containerLeftSidePhoneEnabled");
+            affichageSidebar = true;
+            console.log(affichageSidebar);
+        }else if(affichageSidebar == true){
+            menuSidebar[0].classList.remove("containerLeftSidePhoneEnabled");
+            menuSidebar[0].classList.add("containerLeftSidePhone");
+            affichageSidebar = false;
+            console.log(affichageSidebar);
+        }
+        })
+      });
+
 
     function checkConstant() {
         ratioViewport();
 
-        //adaptation css()
     }
 
 
