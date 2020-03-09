@@ -6,63 +6,63 @@
     </header>
     <body>
       <trans-unit id="zh5oKD9" resname="This value should be false.">
-        <source>This value should be false.</source>
+        <source>Cette valeur doit être fausse.</source>
         <target>This value should be false.</target>
       </trans-unit>
       <trans-unit id="NN2_iru" resname="This value should be true.">
-        <source>This value should be true.</source>
+        <source>Cette valeur doit être vraie.</source>
         <target>This value should be true.</target>
       </trans-unit>
       <trans-unit id="OjM_kpf" resname="This value should be of type {{ type }}.">
-        <source>This value should be of type {{ type }}.</source>
+        <source>Cette valeur doit être de type {{ type }}.</source>
         <target>This value should be of type {{ type }}.</target>
       </trans-unit>
       <trans-unit id="f0P5pBD" resname="This value should be blank.">
-        <source>This value should be blank.</source>
-        <target>This value should be blank.</target>
+        <source>Ce champ doit être vide.</source>
+        <target>This field should be blank.</target>
       </trans-unit>
       <trans-unit id="ih.4TRN" resname="The value you selected is not a valid choice.">
-        <source>The value you selected is not a valid choice.</source>
+        <source>La valeur que vous avez sélectionnée n'est pas un choix valide.</source>
         <target>The value you selected is not a valid choice.</target>
       </trans-unit>
       <trans-unit id="u81CkP8" resname="You must select at least {{ limit }} choice.|You must select at least {{ limit }} choices.">
-        <source>You must select at least {{ limit }} choice.|You must select at least {{ limit }} choices.</source>
+        <source>Vous devez sélectionner au moins {{ limit }} choix.|Vous devez sélectionner au moins {{ limit }} choix.</source>
         <target>You must select at least {{ limit }} choice.|You must select at least {{ limit }} choices.</target>
       </trans-unit>
       <trans-unit id="nIvOQ_o" resname="You must select at most {{ limit }} choice.|You must select at most {{ limit }} choices.">
-        <source>You must select at most {{ limit }} choice.|You must select at most {{ limit }} choices.</source>
+        <source>Vous devez sélectionner au maximum {{ limit }} choix.|Vous devez sélectionner au maximum {{ limit }} choix.</source>
         <target>You must select at most {{ limit }} choice.|You must select at most {{ limit }} choices.</target>
       </trans-unit>
       <trans-unit id="87zjiHi" resname="One or more of the given values is invalid.">
-        <source>One or more of the given values is invalid.</source>
+        <source>Une ou plusieurs des valeurs données ne sont pas valides.</source>
         <target>One or more of the given values is invalid.</target>
       </trans-unit>
       <trans-unit id="3NeQftv" resname="This field was not expected.">
-        <source>This field was not expected.</source>
+        <source>Ce champ n'était pas prévu.</source>
         <target>This field was not expected.</target>
       </trans-unit>
       <trans-unit id="SwMV4zp" resname="This field is missing.">
-        <source>This field is missing.</source>
+        <source>Ce champ est manquant.</source>
         <target>This field is missing.</target>
       </trans-unit>
       <trans-unit id="LO2vFKN" resname="This value is not a valid date.">
-        <source>This value is not a valid date.</source>
+        <source>La date n'est pas valide.</source>
         <target>This value is not a valid date.</target>
       </trans-unit>
       <trans-unit id="86dU_nv" resname="This value is not a valid datetime.">
-        <source>This value is not a valid datetime.</source>
+        <source>La date/ l'heure n'est pas valide.</source>
         <target>This value is not a valid datetime.</target>
       </trans-unit>
       <trans-unit id="PSvNXdi" resname="This value is not a valid email address.">
-        <source>This value is not a valid email address.</source>
+        <source>L'adresse email n'est pas valide..</source>
         <target>This value is not a valid email address.</target>
       </trans-unit>
       <trans-unit id="3KeHbZy" resname="The file could not be found.">
-        <source>The file could not be found.</source>
+        <source>Le fichier est introuvable.</source>
         <target>The file could not be found.</target>
       </trans-unit>
       <trans-unit id="KtJhQZo" resname="The file is not readable.">
-        <source>The file is not readable.</source>
+        <source>Le fichier est illisible.</source>
         <target>The file is not readable.</target>
       </trans-unit>
       <trans-unit id="JocOVM2" resname="The file is too large ({{ size }} {{ suffix }}). Allowed maximum size is {{ limit }} {{ suffix }}.">
