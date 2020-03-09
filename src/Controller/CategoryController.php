@@ -16,13 +16,13 @@ class CategoryController extends AbstractController
     public function index($id)
     {
         $repo = $this->getDoctrine()->getRepository(Categories::class);
+        $categories = $repo->findAll();
         $category = $repo->find($id);
-
-        // $repo1 = $this->getDoctrine()->getRepository(Products::class);
         $products = $category->getProducts();
 
         return $this->render('category/index.html.twig', [
             'controller_name' => 'CategoryController',
+            'categories' => $categories,
             'category' => $category,
             'products' => $products
         ]);
