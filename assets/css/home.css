@@ -13,7 +13,7 @@ body{
 
 .containerLeftSide{
     display: flex;
-    position: fixed;
+    position: absolute;
     flex-direction: column;
    background-color: crimson;
    width: 13vw;
@@ -40,13 +40,18 @@ body{
 .boutonLogo{
     display: flex;
     width: 15vw;
-    height: 16vw;
+    height: 15vw;
     background-color: crimson;
     color: whitesmoke;
     position: absolute;
     top: 1vh;
+<<<<<<< HEAD
+    left: 21vw;
+    clip-path: polygon(15vw 0, 100% 9vw, 9vw 100%, 0 100%, 0 0);
+=======
     left: 25vw;
     clip-path: polygon(100% 0, 100% 15%, 9% 100%, 0 100%, 0 0);
+>>>>>>> d677c3f5d15f8adb4b25e93f4f96b593618d8bbb
 }
 
 .titre{
@@ -65,7 +70,7 @@ body{
     margin-left: 2vw;
     margin-top: 10vh;
     background-color: rgba(220, 20, 60, 0.137);
-    clip-path: polygon(50% 0%, 100% 0, 100% 100%, 0 100%, 0 47%, 20% 28%);
+    clip-path: polygon(50vw 0%, 100% 0, 100% 100%, 0 100%, 0 47%);
 }
 
 
@@ -348,9 +353,22 @@ body{
 
 .carousel{
     display: flex;
+<<<<<<< HEAD
+    width: 56%;
+    margin-left: 21vw;
+    justify-content: center;
+=======
     width: 100%;
+>>>>>>> d677c3f5d15f8adb4b25e93f4f96b593618d8bbb
     height: 40vh;
     background-color: rgba(247, 255, 247, 0.472);
-    margin-top: 5vh;
+    margin-top: 6vh;
     margin-bottom: 5vh;
 }
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }

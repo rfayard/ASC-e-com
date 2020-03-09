@@ -34,52 +34,65 @@
                     <div class="titre"> ASC e-Commerce</div>
                 </div>
             <div class="containerCentral">
-            <div class="coinPromos">
-                    <div class="containerPromo1">
-                        <div class="promo1">
-                            <div class="containerImagePromo">   Promo !
-                            <br>
-                            {# Profitez de {{ deals[3].getDiscountPercentage()}} % de réduction sur les produits "{{categories[0].name}}" avec le code : {{deals[3].getCode()}} #}
+                <div class="coinPromos">
+                        <div class="containerPromo1">
+                            <div class="promo1">
+                                <div class="containerImagePromo">   Promo !
+                                <br>
+                                {# Profitez de {{ deals[3].getDiscountPercentage()}} % de réduction sur les produits "{{categories[0].name}}" avec le code : {{deals[3].getCode()}} #}
+                                </div>
+                            
                             </div>
-                           
                         </div>
-                    </div>
-                    <div class="containerPromo2">
-                        <div class="promo2">
-                            <div class="containerImagePromo">   Promo !</div>
-                           
-                        </div>
-                        <div class="promo3">
-                            <div class="containerImagePromo">   Promo !</div>
-                           
-                        </div>
-                    </div>
-                   </div> 
-                
-                <div class="carousel">
-
-
-                </div>
-                <div class="containerPreviews">
-                    {% for categories in categories %}
-                        <a href="{{ path('category', {'id': categories.id}) }}" name="{{categories.name}}" style="text-decoration:none">
-                            <div class="preview">
-                                <div class="surtexte"> {{ categories.name }} </div>
+                        <div class="containerPromo2">
+                            <div class="promo2">
+                                <div class="containerImagePromo">   Promo !</div>
+                            
                             </div>
-                        </a>
-                    {% endfor %}
-                </div>
-            
-            </div>
-            <div class="containerRightSide">
-                <button class="boutonEspaceClient">Espace client</button>
-                <button class="boutonPanier">Piano</button>
-                
-                <button id="frenchButton" title="Changer de langue" class="frenchButton" href="#"></button>  
-                <button id="englishButton" title="Change Language" class="englishButton" href="#"></button>
+                            <div class="promo3">
+                                <div class="containerImagePromo">   Promo !</div>
+                            
+                            </div>
+                        </div>
+                    </div> 
                     
-                <button class="boutonMentionsLegales">Mentions légales</button>
-            </div>        
+                    <div class="carouselContainer">
+                        <a class="prevCarousel" onclick="plusSlides(-1)">&#10094;</a>
+                                {% for categories in categories %}
+                                    <div class="mySlides fade">
+                                        <div class="numbertext">{{categories.id}} / 3</div>
+                                        {# <img src="{{}}" class="imageCarousel"> #}
+                                        <div class="textImageCarousel">{{categories.name}}</div>
+                                    </div>
+
+                                {% endfor %}
+                            <a class="nextCarousel" onclick="plusSlides(1)">&#10095;</a>
+                        </div>
+
+                    <div class="containerPreviews">
+                        {% for categories in categories %}
+                            <a href="{{ path('category', {'id': categories.id}) }}" name="{{categories.name}}" style="text-decoration:none">
+                                <div class="preview">
+                                    <div class="surtexte"> {{ categories.name }} </div>
+                                </div>
+                            </a>
+                            <div class="espace"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                </div>
+                <div class="containerRightSide">
+                    <button class="boutonEspaceClient">Espace client</button>
+                    <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
+                    
+                    <button id="frenchButton" title="Changer de langue" class="frenchButton"></button>
+                    <button id="englishButton" title="Changer de langue" class="englishButton"></button>
+                    
+                    <button class="boutonMentionsLegales">Mentions légales</button>
+                </div>        
+                
+        
         </div>
 
     </body>
