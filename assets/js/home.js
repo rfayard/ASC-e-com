@@ -46,3 +46,36 @@ window.addEventListener("DOMContentLoaded", function() {
         }
     })
   });
+
+
+
+let hauteurVue = window.innerHeight;
+let largeurVue = window.innerWidth;
+let ratioHorizontal = largeurVue / hauteurVue;
+let intervalleCheckViewport = window.setInterval(checkConstant, 500); 
+
+function ratioViewport() {
+    hauteurVue = window.innerHeight;
+    largeurVue = window.innerWidth;
+    ratioHorizontal = largeurVue / hauteurVue;
+    
+        if ((largeurVue / hauteurVue) > (11/9)) {
+            ratioHorizontal == (largeurVue / hauteurVue); 
+            console.log(ratioHorizontal);
+        } else if (((largeurVue / hauteurVue) <= (11/9)) && ((largeurVue / hauteurVue) > (0.9))) {
+            ratioHorizontal == (largeurVue / hauteurVue); 
+            console.log(ratioHorizontal);
+        }else if((largeurVue / hauteurVue) <= (0.9)) {
+            ratioHorizontal == (largeurVue / hauteurVue); 
+            console.log(ratioHorizontal);
+        }
+    }
+
+    function checkConstant() {
+        ratioViewport();
+
+        //adaptation css()
+    }
+
+
+    checkConstant();
