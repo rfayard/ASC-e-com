@@ -15,10 +15,12 @@ class ProductController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Products::class);
         $product = $repo->find($id);
+        $products = $repo->findAll();
         
         return $this->render('product/index.html.twig', [
             'controller_name' => 'ProductController',
-            'product' => $product
+            'product' => $product,
+            'products' => $products
         ]);
     }
 }
