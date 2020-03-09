@@ -17,14 +17,14 @@ class CategoryController extends AbstractController
     {
         $repo = $this->getDoctrine()->getRepository(Categories::class);
         $category = $repo->find($id);
-
-        // $repo1 = $this->getDoctrine()->getRepository(Products::class);
         $products = $category->getProducts();
+        $categories = $repo->findAll();
 
         return $this->render('category/index.html.twig', [
             'controller_name' => 'CategoryController',
             'category' => $category,
-            'products' => $products
+            'products' => $products,
+            'categories' => $categories
         ]);
     }
 }
