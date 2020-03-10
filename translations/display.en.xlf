@@ -5,74 +5,38 @@
         <tool tool-id="symfony" tool-name="Symfony"/>
         </header>
         <body>
-        <trans-unit id="piano" resname="Add to cart">
-            <source>Ajouter au panier</source>
-            <target>Add to cart</target>
-        </trans-unit>
-        <trans-unit id="moula" resname="Proceed to checkout">
-            <source>Procéder au paiement</source>
-            <target>Proceed to checkout</target>
-        </trans-unit>
-        <trans-unit id="boiboite" resname="Category">
-            <source>Catégories</source>
-            <target>Categories</target>
-        </trans-unit>
-        <trans-unit id="pigeon" resname="You may also be interested by :">
-            <source>Vous pourriez également être intéressé par :</source>
-            <target>You may also be interested by :</target>
-        </trans-unit>
-        <trans-unit id="gros pigeon" resname="Sale">
-            <source>Promotion</source>
-            <target>Sale</target>
-        </trans-unit>
-        <trans-unit id="thousand" resname="How many do you want ?">
-            <source>Combien en voulez-vous ?</source>
-            <target>How many do you want ?</target>
-        </trans-unit>
-        <trans-unit id="pianopiano" resname="Cart">
-            <source>Panier</source>
-            <target>Cart</target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
+            <trans-unit id="piano">
+                <source>Ajouter au panier</source>
+                <target>Add to cart</target>
+            </trans-unit>
+            <trans-unit id="moula">
+                <source>Procéder au paiement</source>
+                <target>Proceed to checkout</target>
+            </trans-unit>
+            <trans-unit id="boiboite">
+                <source>Catégories</source>
+                <target>Categories</target>
+            </trans-unit>
+            <trans-unit id="pigeon">
+                <source>Vous pourriez également être intéressé par :</source>
+                <target>You may also be interested by :</target>
+            </trans-unit>
+            <trans-unit id="gros pigeon">
+                <source>Promotion</source>
+                <target>Sale</target>
+            </trans-unit>
+            <trans-unit id="thousand" >
+                <source>Combien en voulez-vous ?</source>
+                <target>How many do you want ?</target>
+            </trans-unit>
+            <trans-unit id="pianopiano">
+                <source>Panier</source>
+                <target>Cart</target>
+            </trans-unit>
+            <trans-unit id="" resname="">
+                <source></source>
+                <target></target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

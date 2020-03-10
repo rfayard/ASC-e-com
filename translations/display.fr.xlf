@@ -5,19 +5,19 @@
         <tool tool-id="symfony" tool-name="Symfony"/>
         </header>
         <body>
-        <trans-unit id="piano" resname="Add to cart">
+        <trans-unit id="piano">
             <source>Add to cart</source>
             <target>Ajouter au panier</target>
         </trans-unit>
-        <trans-unit id="moula" resname="Proceed to checkout">
+        <trans-unit id="moula">
             <source>Proceed to checkout</source>
             <target>Procéder au paiement</target>
         </trans-unit>
-        <trans-unit id="boiboite" resname="Category">
+        <trans-unit id="boiboite">
             <source>Categories</source>
             <target>Catégories</target>
         </trans-unit>
-        <trans-unit id="pigeon" resname="You may also be interested by :">
+        <trans-unit id="pigeon">
             <source>You may also be interested by :</source>
             <target>Vous pourriez également être intéressé par :</target>
         </trans-unit>
@@ -25,57 +25,13 @@
             <source>Sale</source>
             <target>Promotion</target>
         </trans-unit>
-        <trans-unit id="thousand" resname="How many do you want ?">
+        <trans-unit id="thousand">
             <source>How many do you want ?</source>
             <target>Combien en voulez-vous ?</target>
         </trans-unit>
-        <trans-unit id="pianopiano" resname="Cart">
+        <trans-unit id="pianopiano">
             <source>Cart</source>
             <target>Panier</target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
-        </trans-unit>
-        <trans-unit id="" resname="">
-            <source></source>
-            <target></target>
         </trans-unit>
         </body>
     </file>
