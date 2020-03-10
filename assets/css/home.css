@@ -33,7 +33,7 @@ body{
     position: fixed;
     flex-direction: column;
    background-color: crimson;
-   width: 15vw;
+   width: 18vw;
    height: 75vh;
    clip-path: polygon(100% 0, 100% 66%, 0 100%, 0 100%, 0 0);
    z-index: 2;
@@ -228,21 +228,69 @@ body{
 }
 
 .boutonEspaceClient{
+    display: flex;
+}
+
+.boutonEspaceClientComputer{
     transition: ease 0.5s;
     display: flex;
     width: 5vw;
-    height: 8vw;
+    height: 11vh;
     background-color: crimson;
     position: fixed;
     top: 0vh;
     clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
 }
 
-.boutonEspaceClient:hover{
+.boutonEspaceClientPad{
+    transition: ease 0.5s;
+    display: flex;
+    width: 8vw;
+    height: 8vh;
+    background-color: crimson;
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientPhone{
+    transition: ease 0.5s;
+    display: flex;
+    width: 9vh;
+    height: 9vh;
+    background-color: crimson;
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientComputer:hover{
     transition: ease 0.5s;
     display: flex;
     width: 5.5vw;
-    height: 9vw;
+    height: 14.5vh;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientPad:hover{
+    transition: ease 0.5s;
+    display: flex;
+    width: 8.5vw;
+    height: 11.5vh;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientPhone:hover{
+    transition: ease 0.5s;
+    display: flex;
+    width: 9.5vh;
+    height: 12.5vh;
     background-color: rgb(230, 53, 88);
     position: fixed;
     top: 0vh;
@@ -250,27 +298,83 @@ body{
 }
 
 .boutonPanier{
+    display: flex;
+}
+
+.boutonPanierComputer{
     transition: ease 0.3s;
     display: flex;
     width: 5vw;
-    height: 7vw;
+    height: 11vh;
     background-color: crimson;
     position: fixed;
-    top: 12vh;
+    top: 9.5vh;
     clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
     align-items: flex-end;
     justify-content: center;
 }
 
-.boutonPanier:hover{
+.boutonPanierPad{
+    transition: ease 0.3s;
+    display: flex;
+    width: 8vw;
+    height:8vh;
+    background-color: crimson;
+    position: fixed;
+    top: 7.5vh;
+    clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierPhone{
+    transition: ease 0.3s;
+    display: flex;
+    width: 9vh;
+    height: 9vh;
+    background-color: crimson;
+    position: fixed;
+    top: 7.8vh;
+    clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierComputer:hover{
+    transition: ease 0.75s;
+    display: flex;
+    width: 16vw;
+    height: 16vw;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 9.5vh;
+    clip-path: polygon(38% 22%, 65% 0, 65% 42%, 100% 42%, 100% 100%, 0 100%, 0 42%, 38% 42%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierPad:hover{
     transition: ease 0.75s;
     display: flex;
     width: 18vw;
     height: 18vw;
     background-color: rgb(230, 53, 88);
     position: fixed;
-    top: 12vh;
-    clip-path: polygon(38% 22%, 65% 0, 65% 42%, 100% 42%, 100% 100%, 0 100%, 0 42%, 38% 42%);
+    top: 8vh;
+    clip-path: polygon(32% 22%, 71% 0, 71% 42%, 100% 42%, 100% 100%, 0 100%, 0 42%, 32% 42%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierPhone:hover{
+    transition: ease 0.75s;
+    display: flex;
+    width: 18vw;
+    height: 18vw;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 8vh;
+    clip-path: polygon(32% 22%, 71% 0, 71% 42%, 100% 42%, 100% 100%, 0 100%, 0 42%, 32% 42%);
     align-items: flex-end;
     justify-content: center;
 }

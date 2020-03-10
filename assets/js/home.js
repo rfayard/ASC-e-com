@@ -54,6 +54,8 @@ let largeurVue = window.innerWidth;
 let ratioHorizontal = largeurVue / hauteurVue;
 let intervalleCheckViewport = window.setInterval(checkConstant, 500); 
 
+let boutonEspaceClient =  document.getElementsByClassName("boutonEspaceClient");
+let boutonPanier =  document.getElementsByClassName("boutonPanier");
 let listeCategories = document.getElementsByClassName("preview");
 let menuSidebar = document.getElementsByClassName("containerLeftSide");
 let affichageSidebar = false;
@@ -66,10 +68,16 @@ function responsiveComputer(){
         listeCategories[i].classList.remove("previewPhone");
         listeCategories[i].classList.add("previewComputer");
     }
+    document.getElementById("myBurgerBtn").style.display = "none";
     menuSidebar[0].classList.remove("containerLeftSidePad");
     menuSidebar[0].classList.remove("containerLeftSidePhone");
     menuSidebar[0].classList.add("containerLeftSideComputer");
-    document.getElementById("myBurgerBtn").style.display = "none";
+    boutonPanier[0].classList.remove("boutonPanierPad");
+    boutonPanier[0].classList.remove("boutonPanierPhone");
+    boutonPanier[0].classList.add("boutonPanierComputer");
+    boutonEspaceClient[0].classList.remove("boutonEspaceClientPad");
+    boutonEspaceClient[0].classList.remove("boutonEspaceClientPhone");
+    boutonEspaceClient[0].classList.add("boutonEspaceClientComputer");
 }
 
 function responsivePad(){
@@ -79,10 +87,17 @@ function responsivePad(){
         listeCategories[i].classList.remove("previewComputer");
         listeCategories[i].classList.add("previewPad");
     }   
+    affichageSidebar = false;
+    document.getElementById("myBurgerBtn").style.display = "none";
     menuSidebar[0].classList.remove("containerLeftSideComputer");
     menuSidebar[0].classList.remove("containerLeftSidePhone");
     menuSidebar[0].classList.add("containerLeftSidePad");
-    document.getElementById("myBurgerBtn").style.display = "none";
+    boutonPanier[0].classList.remove("boutonPanierComputer");
+    boutonPanier[0].classList.remove("boutonPanierPhone");
+    boutonPanier[0].classList.add("boutonPanierPad");
+    boutonEspaceClient[0].classList.remove("boutonEspaceClientComputer");
+    boutonEspaceClient[0].classList.remove("boutonEspaceClientPhone");
+    boutonEspaceClient[0].classList.add("boutonEspaceClientPad");
 }
 
 function responsivePhone(){
@@ -92,10 +107,18 @@ function responsivePhone(){
         listeCategories[i].classList.remove("previewComputer");
         listeCategories[i].classList.add("previewPhone");
     }
+    document.getElementById("myBurgerBtn").style.display = "flex";
     menuSidebar[0].classList.remove("containerLeftSidePad");
     menuSidebar[0].classList.remove("containerLeftSideComputer");
-    menuSidebar[0].classList.add("containerLeftSidePhone");
-    document.getElementById("myBurgerBtn").style.display = "flex";
+    if(affichageSidebar == false){
+        menuSidebar[0].classList.add("containerLeftSidePhone");
+    }
+    boutonPanier[0].classList.remove("boutonPanierPad");
+    boutonPanier[0].classList.remove("boutonPanierComputer");
+    boutonPanier[0].classList.add("boutonPanierPhone");
+    boutonEspaceClient[0].classList.remove("boutonEspaceClientPad");
+    boutonEspaceClient[0].classList.remove("boutonEspaceClientComputer");
+    boutonEspaceClient[0].classList.add("boutonEspaceClientPhone");
 }
 
 function ratioViewport() {
