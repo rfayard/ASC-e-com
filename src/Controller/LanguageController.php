@@ -21,4 +21,9 @@ class LanguageController extends AbstractController
        // retour à la page précédente
        return $this->redirect($request->headers->get('referer'));
     }
+
+    public function index(Request $request)
+    {
+        $locale = $request->getLocale();
+    }
 }
