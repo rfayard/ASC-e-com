@@ -94,67 +94,67 @@
         <target>This value should not be blank.</target>
       </trans-unit>
       <trans-unit id="2G4Vepm" resname="This value should not be null.">
-        <source>This value should not be null.</source>
+        <source>Cette valeur ne devrait pas être nulle.</source>
         <target>This value should not be null.</target>
       </trans-unit>
       <trans-unit id="yDc3m6E" resname="This value should be null.">
-        <source>This value should be null.</source>
+        <source>Cette valeur devrait être nulle.</source>
         <target>This value should be null.</target>
       </trans-unit>
       <trans-unit id="zKzWejA" resname="This value is not valid.">
-        <source>This value is not valid.</source>
+        <source>Cette valeur n'est pas valide.</source>
         <target>This value is not valid.</target>
       </trans-unit>
       <trans-unit id="HSuBZpQ" resname="This value is not a valid time.">
-        <source>This value is not a valid time.</source>
+        <source>Cette valeur n'est pas une heure valide.</source>
         <target>This value is not a valid time.</target>
       </trans-unit>
       <trans-unit id="snWc_QT" resname="This value is not a valid URL.">
-        <source>This value is not a valid URL.</source>
+        <source>Cette valeur n'est pas une URL valide..</source>
         <target>This value is not a valid URL.</target>
       </trans-unit>
       <trans-unit id="jpaLsb2" resname="The two values should be equal.">
-        <source>The two values should be equal.</source>
+        <source>Les deux valeurs devraient être égales.</source>
         <target>The two values should be equal.</target>
       </trans-unit>
       <trans-unit id="fIlB1B_" resname="The file is too large. Allowed maximum size is {{ limit }} {{ suffix }}.">
-        <source>The file is too large. Allowed maximum size is {{ limit }} {{ suffix }}.</source>
+        <source>Le fichier est trop gros. La taille maximale autorisée est de {{ limit }} {{ suffix }}.</source>
         <target>The file is too large. Allowed maximum size is {{ limit }} {{ suffix }}.</target>
       </trans-unit>
       <trans-unit id="tW7o0t9" resname="The file is too large.">
-        <source>The file is too large.</source>
+        <source>Le fichier est trop gros.</source>
         <target>The file is too large.</target>
       </trans-unit>
       <trans-unit id=".exF5Ww" resname="The file could not be uploaded.">
-        <source>The file could not be uploaded.</source>
+        <source>Le fichier ne peut pas être importé.</source>
         <target>The file could not be uploaded.</target>
       </trans-unit>
       <trans-unit id="d7sS5yw" resname="This value should be a valid number.">
-        <source>This value should be a valid number.</source>
+        <source>La valeur devrait être un nombre valide.</source>
         <target>This value should be a valid number.</target>
       </trans-unit>
       <trans-unit id="BS2Ez6i" resname="This file is not a valid image.">
-        <source>This file is not a valid image.</source>
+        <source>Ce fichier n'est pas une image valide.</source>
         <target>This file is not a valid image.</target>
       </trans-unit>
       <trans-unit id="ydcT9kU" resname="This is not a valid IP address.">
-        <source>This is not a valid IP address.</source>
+        <source>L'adresse IP est invalide.</source>
         <target>This is not a valid IP address.</target>
       </trans-unit>
       <trans-unit id="lDOGNFX" resname="This value is not a valid language.">
-        <source>This value is not a valid language.</source>
+        <source>Le langage n'est pas valide.</source>
         <target>This value is not a valid language.</target>
       </trans-unit>
       <trans-unit id="y9IdYkA" resname="This value is not a valid locale.">
-        <source>This value is not a valid locale.</source>
+        <source>Cette valeur n'est pas un paramètre régional valide.</source>
         <target>This value is not a valid locale.</target>
       </trans-unit>
       <trans-unit id="1YC0pOd" resname="This value is not a valid country.">
-        <source>This value is not a valid country.</source>
+        <source>Cette valeur n'est pas un pays valide.</source>
         <target>This value is not a valid country.</target>
       </trans-unit>
       <trans-unit id="B5ebaMp" resname="This value is already used.">
-        <source>This value is already used.</source>
+        <source>Cette valeur est déjà utilisée.</source>
         <target>This value is already used.</target>
       </trans-unit>
       <trans-unit id="L6097a6" resname="The size of the image could not be detected.">
@@ -318,7 +318,7 @@
         <target>This is not a valid Business Identifier Code (BIC).</target>
       </trans-unit>
       <trans-unit id="VKDowX6" resname="Error">
-        <source>Error</source>
+        <source>Erreur</source>
         <target>Error</target>
       </trans-unit>
       <trans-unit id="8zqt0Ik" resname="This is not a valid UUID.">
