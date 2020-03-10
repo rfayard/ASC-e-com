@@ -298,23 +298,23 @@
         <target>The image is landscape oriented ({{ width }}x{{ height }}px). Landscape oriented images are not allowed.</target>
       </trans-unit>
       <trans-unit id="sFyGx4B" resname="The image is portrait oriented ({{ width }}x{{ height }}px). Portrait oriented images are not allowed.">
-        <source>The image is portrait oriented ({{ width }}x{{ height }}px). Portrait oriented images are not allowed.</source>
+        <source>L'image est au format portrait ({{ width }}x{{ height }}px). Les images au format portrait ne sont pas autorisées.</source>
         <target>The image is portrait oriented ({{ width }}x{{ height }}px). Portrait oriented images are not allowed.</target>
       </trans-unit>
       <trans-unit id="jZgqcpL" resname="An empty file is not allowed.">
-        <source>An empty file is not allowed.</source>
+        <source>Un fichier vide n'est pas autorisé.</source>
         <target>An empty file is not allowed.</target>
       </trans-unit>
       <trans-unit id="bcfVezI" resname="The host could not be resolved.">
-        <source>The host could not be resolved.</source>
+        <source>Le nom de domaine n'a pas pu être résolu.</source>
         <target>The host could not be resolved.</target>
       </trans-unit>
       <trans-unit id="NtzKvgt" resname="This value does not match the expected {{ charset }} charset.">
-        <source>This value does not match the expected {{ charset }} charset.</source>
+        <source>Cette valeur ne correspond pas au jeu de caractères {{ charset }} attendu.</source>
         <target>This value does not match the expected {{ charset }} charset.</target>
       </trans-unit>
       <trans-unit id="Wi2y9.N" resname="This is not a valid Business Identifier Code (BIC).">
-        <source>This is not a valid Business Identifier Code (BIC).</source>
+        <source>Ce n'est pas un code universel d'identification des banques (BIC) valide.</source>
         <target>This is not a valid Business Identifier Code (BIC).</target>
       </trans-unit>
       <trans-unit id="VKDowX6" resname="Error">
@@ -322,63 +322,63 @@
         <target>Error</target>
       </trans-unit>
       <trans-unit id="8zqt0Ik" resname="This is not a valid UUID.">
-        <source>This is not a valid UUID.</source>
+        <source>Ceci n'est pas un UUID valide.</source>
         <target>This is not a valid UUID.</target>
       </trans-unit>
       <trans-unit id="ru.4wkH" resname="This value should be a multiple of {{ compared_value }}.">
-        <source>This value should be a multiple of {{ compared_value }}.</source>
+        <source>Cette valeur doit être un multiple de {{ compared_value }}.</source>
         <target>This value should be a multiple of {{ compared_value }}.</target>
       </trans-unit>
       <trans-unit id="M3vyK6s" resname="This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}.">
-        <source>This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}.</source>
+        <source>Ce code d'identification d'entreprise (BIC) n'est pas associé à l'IBAN {{ iban }}.</source>
         <target>This Business Identifier Code (BIC) is not associated with IBAN {{ iban }}.</target>
       </trans-unit>
       <trans-unit id="2v2xpAh" resname="This value should be valid JSON.">
-        <source>This value should be valid JSON.</source>
+        <source>Cette valeur doit être un JSON valide.</source>
         <target>This value should be valid JSON.</target>
       </trans-unit>
       <trans-unit id="9CWVEGq" resname="This collection should contain only unique elements.">
-        <source>This collection should contain only unique elements.</source>
+        <source>Cette collection ne doit pas comporter de doublons.</source>
         <target>This collection should contain only unique elements.</target>
       </trans-unit>
       <trans-unit id="WdvZfq." resname="This value should be positive.">
-        <source>This value should be positive.</source>
+        <source>Cette valeur doit être strictement positive.</source>
         <target>This value should be positive.</target>
       </trans-unit>
       <trans-unit id="ubHMK2q" resname="This value should be either positive or zero.">
-        <source>This value should be either positive or zero.</source>
+        <source>Cette valeur doit être supérieure ou égale à zéro.</source>
         <target>This value should be either positive or zero.</target>
       </trans-unit>
       <trans-unit id="IwNTzo_" resname="This value should be negative.">
-        <source>This value should be negative.</source>
+        <source>Cette valeur doit être strictement négative.</source>
         <target>This value should be negative.</target>
       </trans-unit>
       <trans-unit id="0GfwMfP" resname="This value should be either negative or zero.">
-        <source>This value should be either negative or zero.</source>
+        <source>Cette valeur doit être inférieure ou égale à zéro.</source>
         <target>This value should be either negative or zero.</target>
       </trans-unit>
       <trans-unit id="fs3qQZR" resname="This value is not a valid timezone.">
-        <source>This value is not a valid timezone.</source>
+        <source>Cette valeur n'est pas un fuseau horaire valide.</source>
         <target>This value is not a valid timezone.</target>
       </trans-unit>
       <trans-unit id="40dnsod" resname="This password has been leaked in a data breach, it must not be used. Please use another password.">
-        <source>This password has been leaked in a data breach, it must not be used. Please use another password.</source>
+        <source>Ce mot de passe a été divulgué lors d'une fuite de données, il ne doit plus être utilisé. Veuillez utiliser un autre mot de passe.</source>
         <target>This password has been leaked in a data breach, it must not be used. Please use another password.</target>
       </trans-unit>
       <trans-unit id="VvxxWas" resname="This value should be between {{ min }} and {{ max }}.">
-        <source>This value should be between {{ min }} and {{ max }}.</source>
+        <source>Cette valeur doit être comprise entre {{ min }} et {{ max }}.</source>
         <target>This value should be between {{ min }} and {{ max }}.</target>
       </trans-unit>
       <trans-unit id=".SEaaBa" resname="This form should not contain extra fields.">
-        <source>This form should not contain extra fields.</source>
+        <source>Ce formulaire ne doit pas contenir des champs supplémentaires.</source>
         <target>This form should not contain extra fields.</target>
       </trans-unit>
       <trans-unit id="WPnLAh9" resname="The uploaded file was too large. Please try to upload a smaller file.">
-        <source>The uploaded file was too large. Please try to upload a smaller file.</source>
+        <source>Le fichier téléchargé est trop volumineux. Merci d'essayer d'envoyer un fichier plus petit.</source>
         <target>The uploaded file was too large. Please try to upload a smaller file.</target>
       </trans-unit>
       <trans-unit id="fvxWW3V" resname="The CSRF token is invalid. Please try to resubmit the form.">
-        <source>The CSRF token is invalid. Please try to resubmit the form.</source>
+        <source>Le jeton CSRF est invalide. Veuillez renvoyer le formulaire.</source>
         <target>The CSRF token is invalid. Please try to resubmit the form.</target>
       </trans-unit>
     </body>
