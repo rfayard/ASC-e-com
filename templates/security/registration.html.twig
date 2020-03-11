@@ -1,15 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Inscription</h1>
+<h1>Inscription</h1>
 
-    {{form_start(form)}}
-    {{form_row(form.first_name, {'label': 'Prénom','attr': {'placeholder':'Giorno'}})}}
-    {{form_row(form.last_name, {'label': 'Nom','attr': {'placeholder':'Giovanna'}})}}
-    {# TODO "Date de naissance" only goes back five years #}
-    {{form_row(form.date_of_birth, {'label': 'Date de naissance'})}}
-    {{form_row(form.email, {'label': 'Adresse email','attr': {'placeholder':'goldexperience@requiem.jo'}})}}
-    {{form_row(form.username, {'label': 'Nom d\'utilisateur','attr': {'placeholder':'giogio85'}})}}
+{{form_start(form)}}
+{{form_row(form.first_name, {'label': 'Prénom','attr': {'placeholder':'Giorno'}})}}
+{{form_row(form.last_name, {'label': 'Nom','attr': {'placeholder':'Giovanna'}})}}
+{{form_row(form.date_of_birth, {'label': 'Date de naissance'})}}
+{{form_row(form.email, {'label': 'Adresse email','attr': {'placeholder':'goldexperience@requiem.jo'}})}}
+{{form_row(form.username, {'label': 'Nom d\'utilisateur','attr': {'placeholder':'giogio85'}})}}
     {{form_row(form.password, {'label': 'Mot de passe','attr': {'placeholder':'g0ld3nw1nd'}})}}
     {{form_row(form.confirm_password, {'label': 'Confirmation du mot de passe','attr': {'placeholder':'g0ld3nw1nd'}})}}
     <button type="submit" class="btn btn-success">Inscription !</button>
