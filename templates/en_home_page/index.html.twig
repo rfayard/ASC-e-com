@@ -38,20 +38,20 @@
             <div class="coinPromos">
                     <div class="containerPromo1">
                         <div class="promo1">
-                            <div class="containerImagePromo">   Promo !
+                            <div class="containerImagePromo">  Sale !
                             <br>
-                            {# Profitez de {{ deals[3].getDiscountPercentage()}} % de réduction sur les produits "{{categories[0].name}}" avec le code : {{deals[3].getCode()}} #}
+                            {# Get {{ deals[3].getDiscountPercentage()}} % off on "{{categories[0].name}}" products with the code : {{deals[3].getCode()}} #}
                             </div>
                            
                         </div>
                     </div>
                         <div class="containerPromo2">
                             <div class="promo2">
-                                <div class="containerImagePromo">   Promo !</div>
+                                <div class="containerImagePromo">  Sale !</div>
                             
                             </div>
                             <div class="promo3">
-                                <div class="containerImagePromo">   Promo !</div>
+                                <div class="containerImagePromo">  Sale !</div>
                             
                             </div>
                         </div>
@@ -83,13 +83,13 @@
             
             </div>
             <div class="containerRightSide">
-                <button class="boutonEspaceClient">Espace client</button>
-                <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
+                <button class="boutonEspaceClient">Customer's area</button>
+                <a href="{{ path('en_cart') }}" class="boutonPanier">Cart</a>
                 
                 <a id="frenchButton" title="Changer de langue" class="frenchButton" href="{{ path('home') }}"></a>
                 <a id="englishButton" title="Change languahe" class="englishButton" href="{{ path('en_home_page') }}"></a>
 
-                <button class="boutonMentionsLegales">Mentions légales</button>
+                <button class="boutonMentionsLegales">legal references</button>
             </div>      
       </div>
     </body>
