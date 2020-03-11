@@ -10,6 +10,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Form\UserUpdateType;
 use App\Form\AdressFormType;
+use App\Entity\Cart;
 use App\Entity\Adresses;
 
 class UIController extends AbstractController
@@ -50,5 +51,28 @@ class UIController extends AbstractController
             'formU' => $formU->createView(),
             'formA' => $formA->createView()
         ]);
+    }
+    /**
+     * @Route("/cart", name="user_cart")
+     */
+    public function showCart(Security $security) {
+        if ($security->getUser()) {
+            $user = $security->getUser();
+            $cart = $user->getCart();
+
+            if($cart === NULL) {
+                $cart = new Cart();
+                $cart->setUser($user);
+            }
+
+            $products = $cart->getProducts();
+
+            return $this->render('ui/cart.html.twig', [
+                'products' => $products
+            ]);
+        }
+        else {
+            return $this->render('ui/not_connected.html.twig');
+        }
     }
 }
