@@ -58,4 +58,20 @@ class EnHomePageController extends AbstractController
         ]);
 
     }
+
+    /**
+     * @Route("/en/legal", name="en_legal")
+     */
+
+    public function seePolicy()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(User::class)->findAll();
+
+        return $this->render('en_legal/index.html.twig', [
+            'user' => $user
+        ]);
+
+    }
 }

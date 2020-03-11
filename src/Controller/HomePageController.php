@@ -61,4 +61,20 @@ class HomePageController extends AbstractController
 
     }
 
+    /**
+     * @Route("/legal", name="legal")
+     */
+
+    public function seePolicy()
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(User::class)->findAll();
+
+        return $this->render('legal/index.html.twig', [
+            'user' => $user
+        ]);
+
+    }
+
 }
