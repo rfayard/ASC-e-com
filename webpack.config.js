@@ -28,6 +28,7 @@ Encore
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
     .addStyleEntry('home', './assets/css/home.css')
+    .addStyleEntry('product', './assets/css/product.css')
 
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
@@ -54,6 +55,12 @@ Encore
     .configureBabelPresetEnv((config) => {
         config.useBuiltIns = 'usage';
         config.corejs = 3;
+    })
+
+    .configureWatchOptions(function(watchOptions) {
+        // enable polling and check for changes every 250ms
+        // polling is useful when running Encore inside a Virtual Machine
+        watchOptions.poll = 250;
     })
 
     // enables Sass/SCSS support

@@ -2,23 +2,75 @@
 body{
     display: flex;
     width: 100vw;
-    height: auto;
+    overflow-x: hidden;
 }
 
 .mainContainer{
     display: flex;
-   width: 100vw;
+   width: 100%;
    height: auto;   
 }
 
 .containerLeftSide{
+    display: flex;  
+}
+
+.containerLeftSideComputer{
+    transition: ease 0.5s;
     display: flex;
+    position: fixed;
+    flex-direction: column;
+   background-color: crimson;
+   width: 13vw;
+   height: 85vh;
+   clip-path: polygon(100% 0, 100% 74%, 0 100%, 0 100%, 0 0);
+   z-index: 2;
+}
+
+.containerLeftSidePad{
+    transition: ease 0.5s;
+    display: flex;
+    position: fixed;
     flex-direction: column;
    background-color: crimson;
    width: 18vw;
-   height: 85vh;
-   margin-left: 2vw;
-   clip-path: polygon(100% 0, 100% 66%, 9% 100%, 0 100%, 0 0);
+   height: 75vh;
+   clip-path: polygon(100% 0, 100% 66%, 0 100%, 0 100%, 0 0);
+   z-index: 2;
+}
+
+.containerLeftSidePhoneEnabled{
+    transition: ease 0.5s;
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+   background-color: crimson;
+   width: 35vw;
+   height: 65vh;
+   clip-path: polygon(100% 0, 100% 66%, 0 100%, 0 100%, 0 0);
+   z-index: 4;
+}
+
+.containerLeftSidePhone{
+    transition: ease 0.5s;
+    display: none;
+    position: fixed;
+    flex-direction: column;
+   background-color: crimson;
+   width: 35vw;
+   height: 65vh;
+   clip-path: polygon(100% 0, 100% 66%, 0 100%, 0 100%, 0 0);
+   z-index: 4;
+}
+
+.burgerButton{
+    display: flex;
+    position: fixed;
+    background-color: crimson;
+    color: whitesmoke;
+    width: 5vh;
+    height: 5vh;
+    z-index: 6;
 }
 
 .boutonHautDePage{
@@ -27,8 +79,10 @@ body{
     height: 7vw;
     background-color: crimson;
     position: fixed;
+    z-index: 2;
     bottom: 0vh;
-    left: 16vw;
+    left: 8.5vw;
+    font-size: 3vw;
     clip-path: polygon(0 80%, 100% 0, 100% 100%, 0 100%);
     align-items: flex-end;
     justify-content: center;
@@ -39,26 +93,136 @@ body{
     width: 15vw;
     height: 16vw;
     background-color: crimson;
+    color: whitesmoke;
     position: absolute;
     top: 1vh;
-    left: 35vw;
-    clip-path: polygon(100% 0, 100% 15%, 9% 100%, 0 100%, 0 0);
+    left: 25vw;
+    clip-path: polygon(15vw 0, 15vw 3vw, 3vw 25vh, 0 25vh, 0 0);
+}
+
+.titre{
+    margin-top: 18%;
+    margin-left: 11%;
+    font-size: 160%;
 }
 
 .containerCentral{
     display: flex;
-    width: 56vw;
-    height: 600vh;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
     margin-left: 2vw;
-    margin-top: 12vh;
+    margin-top: 10vh;
     background-color: rgba(220, 20, 60, 0.137);
-    clip-path: polygon(68% 0, 100% 0, 100% 100%, 0 100%, 0 11.58%);
+    clip-path: polygon(50vw 0%, 100% 0, 100% 100%, 0 100%, 0 85vh);
+}
+
+
+.containerPreviews{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100vw;
+    height: auto;
+    background-color: rgba(0, 128, 128, 0.123);
+}
+
+.preview{
+    display: flex;
+}
+
+.previewComputer{
+    transition: ease 0.75s;
+    display: flex;
+    margin-left: 21vw;
+    width: 56%;
+    height: 45vh;
+    background-color: rgba(93, 195, 195, 0.589);
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.previewComputer:hover{
+    transition: ease 0.75s;
+    display: flex;
+    margin-left: 1vw;
+    width: 96vw;
+    height: 45vh;
+    background-color: rgba(69, 148, 148, 0.657);
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.previewPad{
+    transition: ease 0.75s;
+    display: flex;
+    margin-left: 27vw;
+    width: 45vw;
+    height: 37vw;
+    background-color: rgba(93, 195, 195, 0.589);
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.previewPad:hover{
+    transition: ease 0.75s;
+    display: flex;
+    margin-left: 1vw;
+    width: 96vw;
+    height: 39vw;
+    background-color: rgba(69, 148, 148, 0.657);
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.previewPhone{
+    transition: ease 0.75s;
+    display: flex;
+    margin-left: 28vw;
+    width: 47vw;
+    height: 47vw;
+    background-color: rgba(93, 195, 195, 0.589);
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.previewPhone:hover{
+    transition: ease 0.75s;
+    display: flex;
+    margin-left: 1vw;
+    width: 96vw;
+    height: 50vw;
+    background-color: rgba(69, 148, 148, 0.657);
+    justify-content: center;
+    align-items: center;
+    z-index: 0;
+}
+
+.espace{
+    width: 100%;
+    height: 8vh;
+}
+
+.surtexte{
+    color: white;
+    font-size: 300%;
 }
 
 .containerRightSide{
     display: flex;
-    width: 20vw;
-    height: 600vh;
+    position: fixed;
+    z-index: 2;
+    right: 1vw;
+    width: 13vw;
+    height: auto;
     margin-left: 2vw;
     /* background-color: rgba(0, 0, 0, 0.082); */
     justify-content: center;
@@ -66,9 +230,69 @@ body{
 
 .boutonEspaceClient{
     display: flex;
+}
+
+.boutonEspaceClientComputer{
+    transition: ease 0.5s;
+    display: flex;
     width: 5vw;
-    height: 11vw;
+    height: 11vh;
     background-color: crimson;
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientPad{
+    transition: ease 0.5s;
+    display: flex;
+    width: 8vw;
+    height: 8vh;
+    background-color: crimson;
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientPhone{
+    transition: ease 0.5s;
+    display: flex;
+    width: 9vh;
+    height: 9vh;
+    background-color: crimson;
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientComputer:hover{
+    transition: ease 0.5s;
+    display: flex;
+    width: 5.5vw;
+    height: 14.5vh;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientPad:hover{
+    transition: ease 0.5s;
+    display: flex;
+    width: 8.5vw;
+    height: 11.5vh;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 0vh;
+    clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
+}
+
+.boutonEspaceClientPhone:hover{
+    transition: ease 0.5s;
+    display: flex;
+    width: 9.5vh;
+    height: 12.5vh;
+    background-color: rgb(230, 53, 88);
     position: fixed;
     top: 0vh;
     clip-path: polygon(100% 0, 100% 49%, 9% 100%, 0 100%, 0 0);
@@ -76,20 +300,151 @@ body{
 
 .boutonPanier{
     display: flex;
+}
+
+.boutonPanierComputer{
+    transition: ease 0.3s;
+    display: flex;
     width: 5vw;
-    height: 7vw;
+    height: 11vh;
     background-color: crimson;
     position: fixed;
-    top: 18vh;
-    clip-path: polygon(0 80%, 100% 0, 100% 100%, 0 100%);
+    top: 9.5vh;
+    clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
     align-items: flex-end;
     justify-content: center;
 }
 
-.boutonMentionsLegales{
+.boutonPanierPad{
+    transition: ease 0.3s;
+    display: flex;
+    width: 8vw;
+    height:8vh;
+    background-color: crimson;
+    position: fixed;
+    top: 7.5vh;
+    clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierPhone{
+    transition: ease 0.3s;
+    display: flex;
+    width: 9vh;
+    height: 9vh;
+    background-color: crimson;
+    position: fixed;
+    top: 7.8vh;
+    clip-path: polygon(0 70%, 100% 0, 100% 100%, 0 100%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierComputer:hover{
+    transition: ease 0.75s;
+    display: flex;
+    width: 16vw;
+    height: 16vw;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 9.5vh;
+    clip-path: polygon(38% 22%, 65% 0, 65% 42%, 100% 42%, 100% 100%, 0 100%, 0 42%, 38% 42%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierPad:hover{
+    transition: ease 0.75s;
+    display: flex;
+    width: 18vw;
+    height: 18vw;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 8vh;
+    clip-path: polygon(32% 22%, 71% 0, 71% 42%, 100% 42%, 100% 100%, 0 100%, 0 42%, 32% 42%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.boutonPanierPhone:hover{
+    transition: ease 0.75s;
+    display: flex;
+    width: 18vw;
+    height: 18vw;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    top: 8vh;
+    clip-path: polygon(32% 22%, 71% 0, 71% 42%, 100% 42%, 100% 100%, 0 100%, 0 42%, 32% 42%);
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.englishButton{
+    transition: ease 0.5s;
     display: flex;
     width: 5vw;
-    height: 7vw;
+    height: 3vw;
+    background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%),
+    linear-gradient(transparent 38%, white 38%, white 42%, red 42%, red 58%, white 58%, white 62%, transparent 62%),
+    linear-gradient(90deg, transparent 44%, white 44%, white 46%, red 46%, red 56%, white 56%, white 58%, transparent 58%),
+    linear-gradient(33deg, transparent 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, transparent 57%),
+    linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
+    clip-path: polygon(100% 100%, 3% 100%, 100% 3%);
+    position: fixed;
+    bottom: 5vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.englishButton:hover{
+    transition: ease 0.5s;
+    display: flex;
+    width: 5.8vw;
+    height: 3.5vw;
+    background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%),
+    linear-gradient(transparent 38%, white 38%, white 42%, red 42%, red 58%, white 58%, white 62%, transparent 62%),
+    linear-gradient(90deg, transparent 44%, white 44%, white 46%, red 46%, red 56%, white 56%, white 58%, transparent 58%),
+    linear-gradient(33deg, transparent 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, transparent 57%),
+    linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    position: fixed;
+    bottom: 5vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.frenchButton{
+    transition: ease 0.5s;
+    display: flex;
+    width: 5vw;
+    height: 3vw;
+    background:linear-gradient(to right, #002495 0, #002495 33%, #FFF 33%, #FFF 66%, #ed2939 66%, #ed2939 100%); 
+    clip-path: polygon(0 0, 0 97%, 97% 0);
+    position: fixed;
+    bottom: 5vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.frenchButton:hover{
+    transition: ease 0.5s;
+    display: flex;
+    width: 5.8vw;
+    height: 3.5vw;
+    background:linear-gradient(to right, #002495 0, #002495 33%, #FFF 33%, #FFF 66%, #ed2939 66%, #ed2939 100%); 
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);    position: fixed;
+    bottom: 5vw;
+    z-index: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+.boutonMentionsLegales{
+    transition: ease 0.5s;
+    display: flex;
+    width: 5vw;
+    height: 4vw;
     background-color: crimson;
     position: fixed;
     bottom: 0;
@@ -97,9 +452,136 @@ body{
     align-items: center;
 }
 
-.menuSideBar{
+.boutonMentionsLegales:hover{
+    transition: ease 0.5s;
     display: flex;
+    width: 5.8vw;
+    height: 4.6vw;
+    background-color: rgb(230, 53, 88);
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.menuSideBar{
+    transition: ease 0.5s;
+    display: flex;
+    justify-content: center;
     padding-top: 2%;
     padding-bottom: 2%;
-    margin-bottom: 11%;
+    margin-top: 1vh;
+    margin-bottom: 5%;
+    background-color: whitesmoke;
+    border-radius: 1vw;
+
 }
+
+.menuSideBar:hover{
+    transition: ease 0.5s;
+    display: flex;
+    justify-content: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-top: 1vh;
+    margin-bottom: 11%;
+    background-color: rgb(164, 221, 226);
+    border-radius: 1vw;
+
+}
+
+.coinPromos{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 19vw;
+    width: 58%;
+    height: 28vh;
+}
+
+.containerImagePromo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 90%;
+    background-color: rgba(255, 255, 255, 0.185);
+}
+
+.containerPromo1{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 2vh;
+    width: 100%;
+    height: 13vh;
+    background-color: rgba(0, 0, 139, 0.116);
+}
+
+.promo1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 36%;
+    margin-top: 2%;
+}
+
+.centered{
+    display: flex;
+    align-self: center;
+}
+
+.containerPromo2{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    height: 13vh;
+    background-color: rgba(0, 0, 139, 0.116);
+}
+
+.promo2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 28%;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+.promo3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 28%;
+    margin-right: 2%;
+    margin-top: 2%;
+}
+
+.carouselContainer{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: 40vh;
+    background-color: rgba(247, 255, 247, 0.472);
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.footer{
+    display: flex;
+    position: static; 
+    width: 100vw;
+    height: 8vh;
+    background-color: rgb(34, 37, 37);
+    z-index: 15;
+    color: whitesmoke;
+    justify-content:space-evenly;
+    align-items: center;
+}
+
+.instagram {
+    display: flex;
+    color: whitesmoke;
+
+  }

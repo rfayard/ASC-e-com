@@ -13,42 +13,91 @@
     </head>
     <body>
 
-
         <div class="mainContainer">
-            <div class="containerLeftSide"> 
+        <a name="topAnchor"></a>
+            <div class="containerLeftSide" id="1"> 
+                <a href="#topAnchor" class="menuSideBar">ASC e-Commerce</a>
                 <div class="menuSideBar">
                     <form action="/action_page.php">
                     <input type="text" placeholder="Search.." name="search">
                     <button type="submit"><i class="fa fa-search"></i></button>
                     </form>
                 </div>
-                <button class="menuSideBar"> > Catégorie 1 </button>
-                <button class="menuSideBar"> > Catégorie 2 </button>
-                <button class="menuSideBar"> > Catégorie 3 </button>
-                <button class="menuSideBar"> > Catégorie 4 </button>
+
+                {% for categories in categories %}
+                    <a href="#{{ categories.name }}" class="menuSideBar"> > {{ categories.name }} </a>
+                {% endfor %}
                 
             </div>
+            <button id="myBurgerBtn" class="burgerButton"> ↕ </button>
                 <button id="myBtn" title="Go to top" class="boutonHautDePage"> ↑ </button>
                 <div class="boutonLogo">
+                    <div class="titre"> ASC e-Commerce</div>
+                </div>
+            <div class="containerCentral">
+            <div class="coinPromos">
+                    <div class="containerPromo1">
+                        <div class="promo1">
+                            <div class="containerImagePromo">   Promo !
+                            <br>
+                            {# Profitez de {{ deals[3].getDiscountPercentage()}} % de réduction sur les produits "{{categories[0].name}}" avec le code : {{deals[3].getCode()}} #}
+                            </div>
+                           
+                        </div>
+                    </div>
+                        <div class="containerPromo2">
+                            <div class="promo2">
+                                <div class="containerImagePromo">   Promo !</div>
+                            
+                            </div>
+                            <div class="promo3">
+                                <div class="containerImagePromo">   Promo !</div>
+                            
+                            </div>
+                        </div>
+                </div> 
+                
+                <div class="carouselContainer">
+
 
                 </div>
-                <div class="containerCentral">
+
                 <div class="containerPreviews">
-
-
-
+                    {% for categories in categories %}
+                        <a href="{{ path('category', {'id': categories.id}) }}" name="{{categories.name}}" style="text-decoration:none">
+                            <div class="preview">
+                                <div class="surtexte"> {{ categories.name }} </div>
+                            </div>
+                        </a>
+                        <div class="espace"></div>
+                    {% endfor %}
+                    
+            <div class="footer">
+                <a href="https://fr-fr.facebook.com/" class="instagram">Facebook</a>
+                <a href="https://twitter.com/" class="instagram">Twitter</a>
+                <a href="https://www.instagram.com/?hl=fr" class="instagram">Instagram</a>
+                <a href="https://www.instagram.com/?hl=fr" class="instagram">Contact</a>
+                {# <button class="lienRS"><a class="instagram"></a></button> #}
+            </div>  
                 </div>
+            
             </div>
             <div class="containerRightSide">
                 <button class="boutonEspaceClient">Espace client</button>
-                <button class="boutonPanier">Piano</button>
-                <button class="boutonMentionsLegales">Mentions légales</button>
-            </div>        
+                <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
                 
-        
-        </div>
-
+                <button id="frenchButton" title="Changer de langue" class="frenchButton" href="#"></button>  
+                <button id="englishButton" title="Change Language" class="englishButton" href="#"></button>
+                    
+                <button class="boutonMentionsLegales">Mentions légales</button>
+            </div>      
+      </div>
     </body>
 
-  </body>
 </html>
+
+
+    {# {% for category in categories %}
+        <a href="{{ path('category', {'id': category.id}) }}"> {{ category.name }}</a>
+    {% endfor %} #}
+
