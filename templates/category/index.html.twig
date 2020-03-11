@@ -13,7 +13,9 @@
                 <div class="containerPreviews">
                     <h3 class="text-info mb-3">Categories</h3>
                     {% for categories in categories %}
-                        <h6 class="pt-3"><a href="{{ path('category', {'id': categories.id}) }}" style="text-decoration:none; color:black; font-weight:bold"> {{ categories.name }} </a></h6>
+                        {% if category.id != categories.id %}
+                            <h6 class="pt-3"><a href="{{ path('category', {'id': categories.id}) }}" style="text-decoration:none; color:black; font-weight:bold"> {{ categories.name }} </a></h6>
+                        {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -21,12 +23,14 @@
                 <div class="row">
                     {% for product in products %}
                         <div class="card col-lg-4 col-md-6 p-3">
-                            <a href="{{ path('product', {'id': product.id , 'category_id': category.id }) }}" style="text-decoration:none">
-                                <img class="w-100" src="{{ asset('build/images/' ~ product.image) }}" alt="{{ product.name }}">
-                            </a>
+                            <div class="h-100">
+                                <a href="{{ path('product', {'id': product.id , 'cat_id': category.id }) }}" style="text-decoration:none">
+                                    <img class="w-100" src="{{ asset('build/images/' ~ product.image) }}" alt="{{ product.name }}">
+                                </a>
+                            </div>
                             <div class="py-3">
-                                <h5 class="card-title"><a href="{{ path('product', {'id': product.id}) }}" style="text-decoration:none" class="text-dark">{{ product.name }}</a></h5>
-                                <h6><a href="{{ path('product', {'id': product.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
+                                <h5 class="card-title"><a href="{{ path('product', {'id': product.id , 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.name }}</a></h5>
+                                <h6><a href="{{ path('product', {'id': product.id , 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
                                 <h6 class="text-danger pt-3">{{ product.getPriceAllTaxesIncluded() }} €</h6>
                             </div>
                             {# <h6>Le prix avec taxe : {{ product.getPriceWithoutTaxes() }} €</h6>

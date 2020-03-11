@@ -28,6 +28,7 @@ Encore
     //.addEntry('page1', './assets/js/page1.js')
     //.addEntry('page2', './assets/js/page2.js')
     .addStyleEntry('home', './assets/css/home.css')
+    .addStyleEntry('product', './assets/css/product.css')
 
 
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
