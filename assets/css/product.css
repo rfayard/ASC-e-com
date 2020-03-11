@@ -1,0 +1,35 @@
+@import "~bootstrap";
+
+
+.imgBox1 {
+    position: absolute;
+    display: none;
+    height: 60vh;
+    top: 0vh;
+    left: 10vh;
+    z-index: 1;
+}
+
+.imgBox:hover .imgBox1{
+    display: block;
+}
+
+.dddd {
+    opacity: 0;
+    top: 20%;
+    left: 10%;
+}
+
+.ddd {
+    opacity: 1;
+    display: block;
+}
+
+.dd:hover .ddd{
+    opacity: 0.3;
+}
+.dd:hover .dddd{
+    opacity: 1;
+}
+
+

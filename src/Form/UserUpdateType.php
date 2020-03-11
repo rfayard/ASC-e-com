@@ -9,18 +9,18 @@ use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\AbstractType;
 use App\Entity\User;
 
-class RegistrationType extends AbstractType
+class UserUpdateType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('first_name')
-            ->add('last_name')
-            ->add('date_of_birth', BirthdayType::class)
-            ->add('email')
             ->add('username')
             ->add('password', PasswordType::class)
             ->add('confirm_password', PasswordType::class)
+            ->add('first_name')
+            ->add('last_name')
+            ->add('email')
+            ->add('date_of_birth', BirthdayType::class)
         ;
     }
 

@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Your account
+{% endblock %}
+
+{% block body %}
+
+{% if app.user %}
+	<h3>Informations personnels</h3>
+	{{form_start(formU)}}
+	{{form_row(formU.first_name, {'label': 'Prénom'})}}
+	{{form_row(formU.last_name, {'label': 'Nom'})}}
+	{{form_row(formU.date_of_birth, {'label': 'Date de naissance'})}}
+	{{form_row(formU.email, {'label': 'Adresse email'})}}
+	{{form_row(formU.username, {'label': 'Nom d\'utilisateur'})}}
+		{{form_row(formU.password, {'label': 'Mot de passe'})}}
+{{form_row(formU.confirm_password, {'label': 'Confirmation du mot de passe'})}}
+<button type="submit" class="btn btn-success">Sauvegarder les modifications</button>
+{{form_end(formU)}}
+		<h3>Adresse principale</h3>
+		{{form_start(formA)}}
+			{{form_row(formA.name, {'label': 'Nom'})}}
+			{{form_row(formA.first_name, {'label': 'Prénom'})}}
+			{{form_row(formA.postal_adress, {'label': 'Adresse'})}}
+			{{form_row(formA.postal_adress_2, {'label': 'Complément d\'adresse'})}}
+	{{form_row(formA.zip_code, {'label': 'Code postal'})}}
+	{{form_row(formA.city, {'label': 'Ville'})}}
+	{{form_row(formA.country, {'label': 'Pays'})}}
+	{{form_row(formA.phone_number, {'label': 'Numéro de téléphone'})}}
+	{{form_row(formA.adress_name, {'label': 'Nom attribué à l\'adresse'})}}
+<button type="submit" class="btn btn-success">Sauvegarder les modifications</button>
+		{{form_end(formA)}}
+	{% else %}
+		<h2>Vous n'êtes pas connecté !<h2>
+			{% endif %}
+
+		{% endblock %}
