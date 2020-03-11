@@ -58,7 +58,18 @@
                 </div> 
                 
                 <div class="carouselContainer">
-
+                    <div class="carousel">
+                    <button class="sliderLeftButton" id="leftArrow">←</button>
+                        {% for categories in categories %}
+                         <a class="carouselSlide" id="slideId{{categories.id}}" href="">{{categories.name}}</a>
+                        {% endfor %}
+                    <button class="sliderRightButton" id="rightArrow">→</button>
+                    </div>
+                    <div class="carouselDotsContainer">
+                        {% for categories in categories %}
+                        <button class="carouselDots" id="slideDot{{categories.id}}"></button>
+                        {% endfor %}
+                    </div>
 
                 </div>
 
@@ -96,8 +107,4 @@
 
 </html>
 
-
-    {# {% for category in categories %}
-        <a href="{{ path('category', {'id': category.id}) }}"> {{ category.name }}</a>
-    {% endfor %} #}
 

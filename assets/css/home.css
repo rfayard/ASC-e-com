@@ -560,12 +560,90 @@ body{
 
 .carouselContainer{
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-between;
     width: 100%;
     justify-content: center;
     height: 40vh;
     background-color: rgba(247, 255, 247, 0.472);
     margin-top: 5vh;
     margin-bottom: 5vh;
+}
+
+.carousel{
+    display: flex;
+    width: 100%;
+    height: 90%;
+    background-color: rgba(0, 255, 0, 0.144);
+    justify-content: center;
+    align-items: center;
+}
+
+.carouselDotsContainer{
+    display: flex;
+    width: 100%;
+    height: 5%;
+    background-color: rgba(255, 217, 0, 0.144);
+    align-content: center;
+    justify-content: center;
+}
+
+.carouselDots{
+    display: flex;
+    width: 2vw;
+    height: 1vh;
+    border-radius: 3px;
+    background-color: teal;
+}
+
+.activeCarouselDot{
+    display: flex;
+    width: 3vw;
+    height: 1.8vh;
+    border-radius: 3px;
+    background-color: rgb(128, 0, 17);
+}
+
+.sliderRightButton{
+    display: flex;
+    justify-content: center;
+    width: 3vw;
+    height: 3vh;
+    border-radius: 3px;
+    background-color: teal;
+    margin-left: 9%;
+}
+
+.sliderLeftButton{
+    display: flex;
+    justify-content: center;
+    width: 3vw;
+    height: 3vh;
+    border-radius: 3px;
+    background-color: teal;
+    margin-right: 9%;
+}
+
+.carouselSlideInactive{
+    display: none;
+    width: 6vw;
+    height: 6vw;
+    background-color: rgb(128, 0, 17);
+    margin-left: 2%;
+}
+
+.carouselSlideActive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1vh;
+    width: 6vw;
+    height: 12vw;
+    background-color: rgb(128, 0, 17);
+    color: whitesmoke;
+    margin-right: 2.5%;
+    margin-left: 2.5%;
 }
 
 .footer{
