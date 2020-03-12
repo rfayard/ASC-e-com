@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Panier{% endblock %}
+{% block title %}{% trans %}Panier{% endtrans %}{% endblock %}
 
 {% block body %}
 
     <main role="main">
-        <h2>Mon panier</h2>
+        <h2>{% trans %}Mon panier{% endtrans %}</h2>
       <div class="album py-5 bg-light">
         <a href="{{ path('home') }}">RETOUR</a>
         <div class="container">
@@ -22,7 +22,7 @@
                       <div class="btn-group">
                         <a href="{{ path('product', {'id': product.id}) }}" class="btn btn-sm btn-outline-secondary">View</a>
                       </div>
-                      <small class="text-muted">9 mins</small>
+                      <small class="text-muted">{{product.getPriceAllTaxesIncluded()}}€</small>
                     </div>
                   </div>
                 </div>

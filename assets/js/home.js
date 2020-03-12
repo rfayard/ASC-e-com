@@ -15,37 +15,37 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
 
-  window.addEventListener("DOMContentLoaded", function() {
-    let frenchButton = document.getElementById("frenchButton");
-    let isFrench = true;
-    let englishButton = document.getElementById("englishButton");
-    let isEnglish = false;
-    englishButton.addEventListener("click", function(){
+//   window.addEventListener("DOMContentLoaded", function() {
+//     let frenchButton = document.getElementById("frenchButton");
+//     let isFrench = true;
+//     let englishButton = document.getElementById("englishButton");
+//     let isEnglish = false;
+//     englishButton.addEventListener("click", function(){
             
-        if(isEnglish == false){
-            isEnglish = true;
-            isFrench = false;
-            console.log("isEnglish = " + isEnglish);
-            console.log("isFrench = " + isFrench);
-        }else{
-            alert("This website is already in english");
-        }
+//         if(isEnglish == false){
+//             isEnglish = true;
+//             isFrench = false;
+//             console.log("isEnglish = " + isEnglish);
+//             console.log("isFrench = " + isFrench);
+//         }else{
+//             alert("This website is already in english");
+//         }
     
-    })
+//     })
 
 
-    frenchButton.addEventListener("click", function(){
+//     frenchButton.addEventListener("click", function(){
     
-        if(isFrench == false){
-            isEnglish = false;
-            isFrench = true;
-            console.log("isFrench = " + isFrench);
-            console.log("isEnglish = " + isEnglish);
-        }else{
-            alert("Le site est déjà en français");
-        }
-    })
-  });
+//         if(isFrench == false){
+//             isEnglish = false;
+//             isFrench = true;
+//             console.log("isFrench = " + isFrench);
+//             console.log("isEnglish = " + isEnglish);
+//         }else{
+//             alert("Le site est déjà en français");
+//         }
+//     })
+//   });
 
 
 

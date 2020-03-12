@@ -465,6 +465,19 @@ body{
     align-items: center;
 }
 
+#legal{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100vw;
+    height: auto;
+    margin-left: 14vw;
+    margin-right: 14vw;
+    margin-top: 35vh;
+    background-color: rgba(220, 20, 60, 0.137);
+}
+
 .menuSideBar{
     transition: ease 0.5s;
     display: flex;
