@@ -33,6 +33,10 @@
                 <source>Panier</source>
                 <target>Cart</target>
             </trans-unit>
+            <trans-unit id="myPrecious">
+                <source>Mon panier</source>
+                <target>My cart</target>
+            </trans-unit>
             <trans-unit id="" resname="">
                 <source></source>
                 <target></target>

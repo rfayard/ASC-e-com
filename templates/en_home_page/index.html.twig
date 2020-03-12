@@ -38,38 +38,27 @@
             <div class="coinPromos">
                     <div class="containerPromo1">
                         <div class="promo1">
-                            <div class="containerImagePromo">   Promo !
+                            <div class="containerImagePromo">  Sale !
                             <br>
-                            {# Profitez de {{ deals[3].getDiscountPercentage()}} % de réduction sur les produits "{{categories[0].name}}" avec le code : {{deals[3].getCode()}} #}
+                            {# Get {{ deals[3].getDiscountPercentage()}} % off on "{{categories[0].name}}" products with the code : {{deals[3].getCode()}} #}
                             </div>
                            
                         </div>
                     </div>
                         <div class="containerPromo2">
                             <div class="promo2">
-                                <div class="containerImagePromo">   Promo !</div>
+                                <div class="containerImagePromo">  Sale !</div>
                             
                             </div>
                             <div class="promo3">
-                                <div class="containerImagePromo">   Promo !</div>
+                                <div class="containerImagePromo">  Sale !</div>
                             
                             </div>
                         </div>
                 </div> 
                 
                 <div class="carouselContainer">
-                    <div class="carousel">
-                    <button class="sliderLeftButton" id="leftArrow">←</button>
-                        {% for categories in categories %}
-                         <a class="carouselSlide" id="slideId{{categories.id}}" href="">{{categories.name}}</a>
-                        {% endfor %}
-                    <button class="sliderRightButton" id="rightArrow">→</button>
-                    </div>
-                    <div class="carouselDotsContainer">
-                        {% for categories in categories %}
-                        <button class="carouselDots" id="slideDot{{categories.id}}"></button>
-                        {% endfor %}
-                    </div>
+
 
                 </div>
 
@@ -87,29 +76,20 @@
                 <a href="https://fr-fr.facebook.com/" class="instagram">Facebook</a>
                 <a href="https://twitter.com/" class="instagram">Twitter</a>
                 <a href="https://www.instagram.com/?hl=fr" class="instagram">Instagram</a>
-                <a href="mailto:lateamdespeignezizi@onlineformapro.com" class="instagram">Contact</a>
+                <a href="mailto:theteamofthepeignezizi@onlineformapro.com" class="instagram">Contact</a>
+                
             </div>  
                 </div>
             
             </div>
             <div class="containerRightSide">
-                <button class="boutonEspaceClient" id="boutonEspaceClient">Espace client</button>
-                <div class="connexionContainer" id="connexionContainer">
-                        {% if app.user %}
-	                        {# <li><a href="{{ path('profile') }}" class="text-white">Mon profil</a></li> #}
-	                        <div class="connexionStyle"><a href="{{ path('security_logout') }}" class="text-white">Déconnexion</a></div>
-                        {% else %}
-	                        <div class="connexionStyle"><a href="{{ path('register') }}" class="text-white">Inscription</a></div>
-	                        <div class="connexionStyle"><a href="{{ path('security_login') }}" class="text-white">Connexion</a></div>
-                            <button class="connexionButton" id="connexionButton">X</button>
-                        {% endif %}
-                </div>
-                <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
+                <button class="boutonEspaceClient">Customer's area</button>
+                <a href="{{ path('en_cart') }}" class="boutonPanier">Cart</a>
                 
                 <a id="frenchButton" title="Changer de langue" class="frenchButton" href="{{ path('home') }}"></a>
-                <a id="englishButton" title="Change languahe" class="englishButton" href="{{ path('en_home_page') }}"></a>
+                <a id="englishButton" title="Change language" class="englishButton" href="{{ path('en_home_page') }}"></a>
 
-                <a class="boutonMentionsLegales" href="{{path('legal')}}">Mentions légales</a>
+                <a class="boutonMentionsLegales" href="{{path('en_legal')}}">legal references</a>
             </div>      
       </div>
     </body>

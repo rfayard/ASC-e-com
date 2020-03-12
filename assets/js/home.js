@@ -15,37 +15,37 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
 
-  window.addEventListener("DOMContentLoaded", function() {
-    let frenchButton = document.getElementById("frenchButton");
-    let isFrench = true;
-    let englishButton = document.getElementById("englishButton");
-    let isEnglish = false;
-    englishButton.addEventListener("click", function(){
+//   window.addEventListener("DOMContentLoaded", function() {
+//     let frenchButton = document.getElementById("frenchButton");
+//     let isFrench = true;
+//     let englishButton = document.getElementById("englishButton");
+//     let isEnglish = false;
+//     englishButton.addEventListener("click", function(){
             
-        if(isEnglish == false){
-            isEnglish = true;
-            isFrench = false;
-            console.log("isEnglish = " + isEnglish);
-            console.log("isFrench = " + isFrench);
-        }else{
-            alert("This website is already in english");
-        }
+//         if(isEnglish == false){
+//             isEnglish = true;
+//             isFrench = false;
+//             console.log("isEnglish = " + isEnglish);
+//             console.log("isFrench = " + isFrench);
+//         }else{
+//             alert("This website is already in english");
+//         }
     
-    })
+//     })
 
 
-    frenchButton.addEventListener("click", function(){
+//     frenchButton.addEventListener("click", function(){
     
-        if(isFrench == false){
-            isEnglish = false;
-            isFrench = true;
-            console.log("isFrench = " + isFrench);
-            console.log("isEnglish = " + isEnglish);
-        }else{
-            alert("Le site est déjà en français");
-        }
-    })
-  });
+//         if(isFrench == false){
+//             isEnglish = false;
+//             isFrench = true;
+//             console.log("isFrench = " + isFrench);
+//             console.log("isEnglish = " + isEnglish);
+//         }else{
+//             alert("Le site est déjà en français");
+//         }
+//     })
+//   });
 
 
 
@@ -160,9 +160,115 @@ function ratioViewport() {
       });
 
 
+let slidesCarousel = document.getElementsByClassName("carouselSlide");
+let isCarouselDefined = false;
+let activeSlidesList = [];
+let inactiveSlidesList = [];
+let idCenterSlide = 2;
+let isConnexionInterfaceActive = false;
+let connexionButton = document.getElementById("connexionButton");
+
+
+function callCarousel(){
+    if(isCarouselDefined == false){
+        isCarouselDefined = true;
+        carouselSlideDisplay();
+    }
+}
+
+function carouselSlideDisplay(){
+
+    
+    for (let i = 0; i < slidesCarousel.length; i++) {
+    //    console.log("slide du carousel n° " + (i+1));
+       if((i+1) > 3){
+        document.getElementById("slideId" + (i+1)).classList.remove("carouselSlideActive");
+        document.getElementById("slideId" + (i+1)).classList.add("carouselSlideInactive");
+        // inactiveSlidesList.push(document.getElementById("slideId" + (i+1)));
+        }else if((i+1) <= 3){
+            document.getElementById("slideId" + (i+1)).classList.remove("carouselSlideInactive");
+            document.getElementById("slideId" + (i+1)).classList.add("carouselSlideActive");
+            activeSlidesList.push(document.getElementById("slideId" + (i+1)));
+        }
+    }
+
+}
+
+
+function carouselSlideUpdateRight(){
+
+    if(idCenterSlide <= (slidesCarousel.length -2)){
+
+        // idCenterSlide = 2
+    
+    console.log("update des slides actifs");
+    idCenterSlide += 1;
+    console.log(idCenterSlide);
+    document.getElementById("slideId" + (idCenterSlide + 2)).classList.remove("carouselSlideInactive");
+    document.getElementById("slideId" + (idCenterSlide + 2)).classList.add("carouselSlideActive");
+    document.getElementById("slideId" + (idCenterSlide - 2)).classList.add("carouselSlideInactive");
+    document.getElementById("slideId" + (idCenterSlide - 2)).classList.remove("carouselSlideActive");
+    }
+}
+
+
+function carouselSlideUpdateLeft(){
+
+    console.log("update des slides actifs");
+    document.getElementById("slideId" + (idCenterSlide + 2)).classList.remove("carouselSlideActive");
+    document.getElementById("slideId" + (idCenterSlide + 2)).classList.add("carouselSlideInactive");
+    document.getElementById("slideId" + (idCenterSlide - 2)).classList.add("carouselSlideActive");
+    document.getElementById("slideId" + (idCenterSlide - 2)).classList.remove("carouselSlideInactive");
+    idCenterSlide -= 1;
+    console.log(idCenterSlide);
+    
+}
+
+
+window.addEventListener("DOMContentLoaded", function() {
+    let mybutton = document.getElementById("rightArrow");
+    mybutton.addEventListener("click", function(){
+        console.log("fleche de droite cliquée");
+        // activeSlidesList.shift();
+        // console.log(activeSlidesList);
+        carouselSlideUpdateRight();
+    })
+});
+
+
+
+window.addEventListener("DOMContentLoaded", function() {
+    let mybutton = document.getElementById("leftArrow");
+    mybutton.addEventListener("click", function(){
+        console.log("fleche de gauche cliquée");
+        carouselSlideUpdateLeft();
+    })
+});
+
+
+window.addEventListener("DOMContentLoaded", function() {
+    let boutonEspaceClient = document.getElementById("boutonEspaceClient");
+    let connexionContainer = document.getElementById("connexionContainer");
+    boutonEspaceClient.addEventListener("click", function(){
+        connexionContainer.style.display = "flex";
+        isConnexionInterfaceActive = true;
+    })
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+    let connexionContainer = document.getElementById("connexionContainer");
+    let connexionButton = document.getElementById("connexionButton");
+    connexionButton.addEventListener("click", function(){
+        connexionContainer.style.display = "none";
+        isConnexionInterfaceActive = false;
+    })
+});
+
+
+
     function checkConstant() {
         ratioViewport();
-
+        callCarousel();
     }
 
 

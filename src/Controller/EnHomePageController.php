@@ -11,10 +11,10 @@ use App\Entity\Products;
 use App\Entity\Reviews;
 use App\Entity\User;
 
-class HomePageController extends AbstractController
+class EnHomePageController extends AbstractController
 {
     /**
-     * @Route("/home", name="home")
+     * @Route("/en/home", name="en_home_page")
      */
     public function index()
     {
@@ -26,8 +26,8 @@ class HomePageController extends AbstractController
         $reviews = $em->getRepository(Reviews::class)->findAll();
         $user = $em->getRepository(User::class)->findAll();
 
-
-        return $this->render('home_page/index.html.twig', [
+        return $this->render('en_home_page/index.html.twig', [
+            'controller_name' => 'EnHomePageController',
             'cart' => $cart,
             'categories' => $categories,
             'deals' => $deals,
@@ -37,10 +37,8 @@ class HomePageController extends AbstractController
         ]);
     }
 
-
-
     /**
-     * @Route("/cart", name="cart")
+     * @Route("/en/cart", name="en_cart")
      */
 
     public function gotToCart()
@@ -52,7 +50,7 @@ class HomePageController extends AbstractController
         $products = $em->getRepository(Products::class)->findAll();
         $user = $em->getRepository(User::class)->findAll();
 
-        return $this->render('cart/index.html.twig', [
+        return $this->render('en_cart/index.html.twig', [
             'cart' => $cart,
             'categories' => $categories,
             'products' => $products,
@@ -62,7 +60,7 @@ class HomePageController extends AbstractController
     }
 
     /**
-     * @Route("/legal", name="legal")
+     * @Route("/en/legal", name="en_legal")
      */
 
     public function seePolicy()
@@ -71,10 +69,9 @@ class HomePageController extends AbstractController
         $em = $this->getDoctrine()->getManager();
         $user = $em->getRepository(User::class)->findAll();
 
-        return $this->render('legal/index.html.twig', [
+        return $this->render('en_legal/index.html.twig', [
             'user' => $user
         ]);
 
     }
-
 }

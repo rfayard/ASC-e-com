@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}ASC e-commerce{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('home') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('homePageJs') }}
+        {% endblock %}
+
+    </head>
+    <body>
+
+        <div class="mainContainer">
+        <a name="topAnchor"></a>
+            <div class="containerLeftSide" id="1"> 
+                <a href="#topAnchor" class="menuSideBar">ASC e-Commerce</a>
+                
+            </div>
+            <button id="myBurgerBtn" class="burgerButton"> ↕ </button>
+                <button id="myBtn" title="Go to top" class="boutonHautDePage"> ↑ </button>
+                <div class="boutonLogo">
+                    <div class="titre"> ASC e-Commerce</div>
+                </div>
+            <div id="legal">
+            <p><b>We, ASC-e-com: </b><br>
+            Just web apprentices with no legal permission <br>
+            Just several hobos learning web in an old barn<br>
+            Completely down-at-heel, far beyond the point of no return
+            Led by Supreme Leader Knight Gregorian
+            Guide you to the knowledge of our legal references
+            <br><br>
+                <p>As this website is the property of a french society, our terms of service obey to the french law. For more informations, please refer to the following links :<br>
+                <a href ="https://ec.europa.eu/growth/sectors/tourism/business-portal/understanding-legislation/legal-regulations-e-commerce_en">European Comission</a><br>
+                <a href="https://seqlegal.com/it-internet-templates/ecommerce-terms-and-conditions">seq legal</a><br><br>
+                If you ever notice any law issue with this website, please, contact us as soon as possible.
+                </p>
+                    
+                <div class="footer">
+                    <a href="https://fr-fr.facebook.com/" class="instagram">Facebook</a>
+                    <a href="https://twitter.com/" class="instagram">Twitter</a>
+                    <a href="https://www.instagram.com/?hl=fr" class="instagram">Instagram</a>
+                    <a href="mailto:theteamofthepeignezizi@onlineformapro.com" class="instagram">Contact</a>
+                </div>  
+            
+            
+            </div>
+
+            <div class="containerRightSide">
+                <a href="{{ path('en_home_page') }}">Back to the homepage</a>
+            </div>      
+      </div>
+    </body>
+
+</html>
