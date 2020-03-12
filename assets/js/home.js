@@ -165,6 +165,9 @@ let isCarouselDefined = false;
 let activeSlidesList = [];
 let inactiveSlidesList = [];
 let idCenterSlide = 2;
+let isConnexionInterfaceActive = false;
+let connexionButton = document.getElementById("connexionButton");
+
 
 function callCarousel(){
     if(isCarouselDefined == false){
@@ -239,6 +242,25 @@ window.addEventListener("DOMContentLoaded", function() {
     mybutton.addEventListener("click", function(){
         console.log("fleche de gauche cliquée");
         carouselSlideUpdateLeft();
+    })
+});
+
+
+window.addEventListener("DOMContentLoaded", function() {
+    let boutonEspaceClient = document.getElementById("boutonEspaceClient");
+    let connexionContainer = document.getElementById("connexionContainer");
+    boutonEspaceClient.addEventListener("click", function(){
+        connexionContainer.style.display = "flex";
+        isConnexionInterfaceActive = true;
+    })
+});
+
+window.addEventListener("DOMContentLoaded", function() {
+    let connexionContainer = document.getElementById("connexionContainer");
+    let connexionButton = document.getElementById("connexionButton");
+    connexionButton.addEventListener("click", function(){
+        connexionContainer.style.display = "none";
+        isConnexionInterfaceActive = false;
     })
 });
 
