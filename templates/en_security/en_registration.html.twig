@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+        <a href="{{ path('en_home_page') }}">BACK</a>
+    <h1>Sign up</h1>
+
+{{form_start(form)}}
+{{form_row(form.first_name, {'label': 'First name','attr': {'placeholder':'Giorno'}})}}
+{{form_row(form.last_name, {'label': 'Last name','attr': {'placeholder':'Giovanna'}})}}
+{{form_row(form.date_of_birth, {'label': 'Birth date'})}}
+{{form_row(form.email, {'label': 'Email address','attr': {'placeholder':'goldexperience@requiem.jo'}})}}
+{{form_row(form.username, {'label': 'Usernamer','attr': {'placeholder':'giogio85'}})}}
+    {{form_row(form.password, {'label': 'Password','attr': {'placeholder':'g0ld3nw1nd'}})}}
+    {{form_row(form.confirm_password, {'label': 'Confirm password','attr': {'placeholder':'g0ld3nw1nd'}})}}
+    <button type="submit" class="btn btn-success">Sign up!</button>
+    {{form_end(form)}}
+{% endblock %}
