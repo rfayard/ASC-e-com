@@ -58,7 +58,18 @@
                 </div> 
                 
                 <div class="carouselContainer">
-
+                    <div class="carousel">
+                    <button class="sliderLeftButton" id="leftArrow">←</button>
+                        {% for categories in categories %}
+                         <a class="carouselSlide" id="slideId{{categories.id}}" href="">{{categories.name}}</a>
+                        {% endfor %}
+                    <button class="sliderRightButton" id="rightArrow">→</button>
+                    </div>
+                    <div class="carouselDotsContainer">
+                        {% for categories in categories %}
+                        <button class="carouselDots" id="slideDot{{categories.id}}"></button>
+                        {% endfor %}
+                    </div>
 
                 </div>
 
@@ -82,7 +93,17 @@
             
             </div>
             <div class="containerRightSide">
-                <button class="boutonEspaceClient">Espace client</button>
+                <button class="boutonEspaceClient" id="boutonEspaceClient">Espace client</button>
+                <div class="connexionContainer" id="connexionContainer">
+                        {% if app.user %}
+	                        {# <li><a href="{{ path('profile') }}" class="text-white">Mon profil</a></li> #}
+	                        <div class="connexionStyle"><a href="{{ path('security_logout') }}" class="text-white">Déconnexion</a></div>
+                        {% else %}
+	                        <div class="connexionStyle"><a href="{{ path('register') }}" class="text-white">Inscription</a></div>
+	                        <div class="connexionStyle"><a href="{{ path('security_login') }}" class="text-white">Connexion</a></div>
+                            <button class="connexionButton" id="connexionButton">X</button>
+                        {% endif %}
+                </div>
                 <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
                 
                 <a id="frenchButton" title="Changer de langue" class="frenchButton" href="{{ path('home') }}"></a>
