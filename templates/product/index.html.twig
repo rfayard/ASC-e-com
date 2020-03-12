@@ -46,8 +46,8 @@
                     </div>
                     <div class="py-3">
                         <h5 class="card-title"><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ otherproduct.name }}</a></h5>
-                        <h6><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
-                        <h6 class="text-danger pt-3">{{ product.getPriceAllTaxesIncluded() }} €</h6>
+                        <h6><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ otherproduct.description|striptags|slice(0, 70)|raw }}...</a></h6>
+                        <h6 class="text-danger pt-3">{{ otherproduct.getPriceAllTaxesIncluded() }} €</h6>
                     </div>
                 </div>
             {% endif %}
@@ -65,8 +65,8 @@
                             <img class="w-100 dd " src="{{ asset('build/images/' ~ otherproduct.image) }}"> 
                         </a>
                         <div class="dddd position-absolute">
-                            <p><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></p>
-                            <h6 class="text-danger pt-3 ">{{ product.getPriceAllTaxesIncluded() }} €</h6>
+                            <p><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ otherproduct.description|striptags|slice(0, 70)|raw }}...</a></p>
+                            <h6 class="text-danger pt-3 ">{{ otherproduct.getPriceAllTaxesIncluded() }} €</h6>
                         </div>
                     </div>
                 </div>
