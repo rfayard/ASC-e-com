@@ -1,0 +1,10 @@
+easy_admin:
+  design:
+    menu:
+      - label: 'e-commerce'
+        icon: 'store'
+        children:
+          - {entity: 'Categories', icon: 'store-alt', label: 'Categories'}
+          - {entity: 'Products', icon: 'tshirt', label: 'Products'}
+          - {entity: 'User', icon: 'user', label: 'User'}
+          - {entity: 'Deals', icon: 'medal', label: 'Deals'}
