@@ -1,9 +1,4 @@
-@import "~bootstrap";
 
-
-html {
-    scroll-behavior: smooth;
-  }
 
 body{
     display: flex;
@@ -76,16 +71,14 @@ body{
 
 .boutonHautDePage{
     display: flex;
-    width: 3vw;
-    height: 4vw;
+    width: 5vw;
+    height: 7vw;
     background-color: crimson;
     position: fixed;
     z-index: 2;
-    min-width: 35px;
-    min-height: 49px;
     bottom: 0vh;
     left: 8.5vw;
-    font-size: 2vw;
+    font-size: 3vw;
     clip-path: polygon(0 80%, 100% 0, 100% 100%, 0 100%);
     align-items: flex-end;
     justify-content: center;
@@ -93,10 +86,8 @@ body{
 
 .boutonLogo{
     display: flex;
-    width: 14.25vw;
-    height: 12.1vw;
-    min-width: 135px;
-    min-height: 142px;
+    width: 15vw;
+    height: 16vw;
     background-color: crimson;
     color: whitesmoke;
     position: absolute;
@@ -278,72 +269,6 @@ body{
 }
 
 
-
-.englishButton{
-    transition: ease 0.5s;
-    display: flex;
-    min-width: 60px;
-    min-height: 30px;
-    width: 5vw;
-    height: 3vw;
-    background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%),
-    linear-gradient(transparent 38%, white 38%, white 42%, red 42%, red 58%, white 58%, white 62%, transparent 62%),
-    linear-gradient(90deg, transparent 44%, white 44%, white 46%, red 46%, red 56%, white 56%, white 58%, transparent 58%),
-    linear-gradient(33deg, transparent 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, transparent 57%),
-    linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
-    clip-path: polygon(100% 100%, 3% 100%, 100% 3%);
-    position: fixed;
-    bottom: 8.3vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.englishButton:hover{
-    transition: ease 0.5s;
-    display: flex;
-    width: 5.8vw;
-    height: 3.5vw;
-    background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%),
-    linear-gradient(transparent 38%, white 38%, white 42%, red 42%, red 58%, white 58%, white 62%, transparent 62%),
-    linear-gradient(90deg, transparent 44%, white 44%, white 46%, red 46%, red 56%, white 56%, white 58%, transparent 58%),
-    linear-gradient(33deg, transparent 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, transparent 57%),
-    linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    position: fixed;
-    bottom: 8.3vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.frenchButton{
-    transition: ease 0.5s;
-    display: flex;
-    min-width: 60px;
-    min-height: 30px;
-    width: 5vw;
-    height: 3vw;
-    background:linear-gradient(to right, #002495 0, #002495 33%, #FFF 33%, #FFF 66%, #ed2939 66%, #ed2939 100%); 
-    clip-path: polygon(0 0, 0 97%, 97% 0);
-    position: fixed;
-    bottom: 8.3vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.frenchButton:hover{
-    transition: ease 0.5s;
-    display: flex;
-    width: 5.8vw;
-    height: 3.5vw;
-    background:linear-gradient(to right, #002495 0, #002495 33%, #FFF 33%, #FFF 66%, #ed2939 66%, #ed2939 100%); 
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);    
-    position: fixed;
-    bottom: 8.3vh;
-    z-index: 2;
-    justify-content: center;
-    align-items: center;
-}
-
 .footer{
     display: flex;
     position: static; 
@@ -384,82 +309,4 @@ body{
     width: 3vh;
     height: 3vh;
     z-index: 6;
-}
-
-
-
-.boutonMentionsLegales{
-    transition: ease 0.5s;
-    display: flex;
-    width: 5vw;
-    height: 4vw;
-    min-width: 66px;
-    min-height: 50px;
-    background-color: crimson;
-    position: fixed;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.boutonMentionsLegales:hover{
-    transition: ease 0.5s;
-    display: flex;
-    width: 5.8vw;
-    height: 4.6vw;
-    background-color: rgb(230, 53, 88);
-    position: fixed;
-    bottom: 0;
-    justify-content: center;
-    align-items: center;
-}
-
-.containerCategories{
-    display: flex;
-    max-width: 70vw;
-}
-
-.containerPageCategories{
-    display: flex;
-    margin-top: 13.5vh;
-    margin-right: 5vw;
-    margin-left: 5vw;
-}
-
-.pageContainer{
-    display: flex;
-    width: 76vw;
-    justify-content: center;
-}
-
-.returnButton{
-    transition: ease 0.5s;
-    display: flex;
-    background-color: crimson;
-    position: absolute;
-    width: 8vh;
-    height: 7vh;
-    margin-top: 1vh;
-    margin-left: 1vh;
-    clip-path: polygon(100% 0, 100% 52%, 65% 100%, 0 100%, 0 0);
-}
-
-.returnButton:hover{
-    transition: ease 0.5s;
-    display: flex;
-    background-color: rgb(238, 48, 86);
-    position: absolute;
-    height: 7.8vh;
-    width: 8.8vh;
-    margin-top: 1vh;
-    margin-left: 1vh;
-    clip-path: polygon(100% 0, 100% 52%, 65% 100%, 0 100%, 0 0);
-}
-
-.pageContainerProduct{
-    display: flex;
-    width: 76vw;
-    justify-content: center;
-    margin-left: 12vw;
-    margin-top: 19vh;
 }
