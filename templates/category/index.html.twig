@@ -1,50 +1,90 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {{ category.name }} {% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('categories') }}
+        {% endblock %}
 
-{% block title %} {{ category.name }} {% endblock %}
+    </head>
 
-{% block body %}
+<body>
+  
 
-        <a href="{{ path('home') }}">RETOUR</a>
-    <div class="container-fluid p-5">
+        <a class="returnButton" href="{{ path('home') }}">RETOUR</a>
+
+
+          
+                <button id="myBtn" title="Go to top" class="boutonHautDePage"> ↑ </button>
+                <div class="boutonLogo">
+                    <div class="titre"> ASC e-Commerce</div>
+                </div>
+
+            <div class="containerRightSide">
+                <button class="boutonEspaceClient" id="boutonEspaceClient">Espace client</button>
+                <div class="connexionContainer" id="connexionContainer">
+                        {% if app.user %}
+                            {# <li><a href="{{ path('profile') }}" class="text-white">Mon profil</a></li> #}
+                            <div class="connexionStyle"><a href="{{ path('security_logout') }}" class="text-white">Déconnexion</a></div>
+                        {% else %}
+                            <div class="connexionStyle"><a href="{{ path('register') }}" class="text-white">Inscription</a></div>
+                            <div class="connexionStyle"><a href="{{ path('security_login') }}" class="text-white">Connexion</a></div>
+                            <button class="connexionButton" id="connexionButton">X</button>
+                        {% endif %}
+                </div>
+                <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
+                
+                <a id="frenchButton" title="Changer de langue" class="frenchButton" href="{{ path('home') }}"></a>
+                <a id="englishButton" title="Change language" class="englishButton" href="{{ path('en_home_page') }}"></a>
+
+                <a class="boutonMentionsLegales" href="{{path('legal')}}">Mentions légales</a>
+            </div>  
+
+    <div class="container-fluid p-5 containerPageCategories">
 
         <h1>{{ category.name }}</1>
-
-        <div class="row mt-3">
-            <div class="card col-md-2 d-none d-md-block p-3">
-                <div class="containerPreviews">
-                    <h3 class="text-info mb-3">Categories</h3>
-                    {% for categories in categories %}
-                        {% if category.id != categories.id %}
-                            <h6 class="pt-3"><a href="{{ path('category', {'id': categories.id}) }}" style="text-decoration:none; color:black; font-weight:bold"> {{ categories.name }} </a></h6>
-                        {% endif %}
-                    {% endfor %}
+        <div class="pageContainer">    
+            <div class="row mt-3 containerCategories">
+                <div class="card col-md-2 d-none d-md-block p-3">
+                    <div class="containerPreviews">
+                        <h3 class="text-info mb-3">Categories</h3>
+                        {% for categories in categories %}
+                            {% if category.id != categories.id %}
+                                <h6 class="pt-3"><a href="{{ path('category', {'id': categories.id}) }}" style="text-decoration:none; color:black; font-weight:bold"> {{ categories.name }} </a></h6>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-            <div class="card col-md-10">
-                <div class="row">
-                    {% for product in products %}
-                        <div class="card col-lg-4 col-md-6 p-3">
-                            <div class="h-100">
-                                <a href="{{ path('product', {'id': product.id , 'cat_id': category.id }) }}" style="text-decoration:none">
-                                    <img class="w-100" src="{{ asset('build/images/' ~ product.image) }}" alt="{{ product.name }}">
-                                </a>
+                <div class="card col-md-10">
+                    <div class="row ">
+                        {% for product in products %}
+                            <div class="card col-lg-4 col-md-6 p-3">
+                                <div class="h-100">
+                                    <a href="{{ path('product', {'id': product.id , 'cat_id': category.id }) }}" style="text-decoration:none">
+                                        <img class="w-100" src="{{ asset('build/images/' ~ product.image) }}" alt="{{ product.name }}">
+                                    </a>
+                                </div>
+                                <div class="py-3">
+                                    <h5 class="card-title"><a href="{{ path('product', {'id': product.id , 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.name }}</a></h5>
+                                    <h6><a href="{{ path('product', {'id': product.id , 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
+                                    <h6 class="text-danger pt-3">{{ product.getPriceAllTaxesIncluded() }} €</h6>
+                                </div>
+                                {# <h6>Le prix avec taxe : {{ product.getPriceWithoutTaxes() }} €</h6>
+                                {% if product.getIsAvailable() %}
+                                    <h6>Disponible</h6> 
+                                {% else %}
+                                    <h6>Indisponible</h6> 
+                                {% endif %} #}
                             </div>
-                            <div class="py-3">
-                                <h5 class="card-title"><a href="{{ path('product', {'id': product.id , 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.name }}</a></h5>
-                                <h6><a href="{{ path('product', {'id': product.id , 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
-                                <h6 class="text-danger pt-3">{{ product.getPriceAllTaxesIncluded() }} €</h6>
-                            </div>
-                            {# <h6>Le prix avec taxe : {{ product.getPriceWithoutTaxes() }} €</h6>
-                            {% if product.getIsAvailable() %}
-                                <h6>Disponible</h6> 
-                            {% else %}
-                                <h6>Indisponible</h6> 
-                            {% endif %} #}
-                        </div>
-                    {% endfor %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </div>  
+</body>
 
-{% endblock %}

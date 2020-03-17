@@ -1,18 +1,52 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} {{ category.name }} {% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('categories') }}
+        {% endblock %}
 
-{% block title %} {{ product.name }} {% endblock %}
+    </head>
 
-{% block stylesheets %}
-    {{ encore_entry_link_tags('product') }}
-{% endblock %}
-
-{% block body %}
-
-{# <div class="mb-5">
-    <a href="{{ path('category', {'id': category.id}) }}" >Retour à  {{ category.name }}
-</div>   #}
+<body>
+  
 
         <a href="{{ path('home') }}">RETOUR</a>
+
+ 
+
+
+          
+                <button id="myBtn" title="Go to top" class="boutonHautDePage"> ↑ </button>
+                <div class="boutonLogo">
+                    <div class="titre"> ASC e-Commerce</div>
+                </div>
+
+            <div class="containerRightSide">
+                <button class="boutonEspaceClient" id="boutonEspaceClient">Espace client</button>
+                <div class="connexionContainer" id="connexionContainer">
+                        {% if app.user %}
+                            {# <li><a href="{{ path('profile') }}" class="text-white">Mon profil</a></li> #}
+                            <div class="connexionStyle"><a href="{{ path('security_logout') }}" class="text-white">Déconnexion</a></div>
+                        {% else %}
+                            <div class="connexionStyle"><a href="{{ path('register') }}" class="text-white">Inscription</a></div>
+                            <div class="connexionStyle"><a href="{{ path('security_login') }}" class="text-white">Connexion</a></div>
+                            <button class="connexionButton" id="connexionButton">X</button>
+                        {% endif %}
+                </div>
+                <a href="{{ path('cart') }}" class="boutonPanier">Panier</a>
+                
+                <a id="frenchButton" title="Changer de langue" class="frenchButton" href="{{ path('home') }}"></a>
+                <a id="englishButton" title="Change language" class="englishButton" href="{{ path('en_home_page') }}"></a>
+
+                <a class="boutonMentionsLegales" href="{{path('legal')}}">Mentions légales</a>
+            </div>  
+
+
 <div class="container-fluid p-5">
     <div class="row">
         <div class="col-md-4 p-3 imgBox ">
@@ -77,4 +111,4 @@
 
 </div>
 
-{% endblock %}
+</body>

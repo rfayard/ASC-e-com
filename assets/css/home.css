@@ -384,6 +384,8 @@ body{
 .englishButton{
     transition: ease 0.5s;
     display: flex;
+    min-width: 60px;
+    min-height: 30px;
     width: 5vw;
     height: 3vw;
     background: linear-gradient(90deg, transparent 46%, red 46%, red 56%, transparent 56%),
@@ -393,7 +395,7 @@ body{
     linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
     clip-path: polygon(100% 100%, 3% 100%, 100% 3%);
     position: fixed;
-    bottom: 5vw;
+    bottom: 8.3vh;
     justify-content: center;
     align-items: center;
 }
@@ -410,7 +412,7 @@ body{
     linear-gradient(-33deg, mediumblue 45%, white 45%, white 48%, red 48%, red 54%, white 54%, white 57%, mediumblue 57%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
     position: fixed;
-    bottom: 5vw;
+    bottom: 8.3vh;
     justify-content: center;
     align-items: center;
 }
@@ -418,12 +420,14 @@ body{
 .frenchButton{
     transition: ease 0.5s;
     display: flex;
+    min-width: 60px;
+    min-height: 30px;
     width: 5vw;
     height: 3vw;
     background:linear-gradient(to right, #002495 0, #002495 33%, #FFF 33%, #FFF 66%, #ed2939 66%, #ed2939 100%); 
     clip-path: polygon(0 0, 0 97%, 97% 0);
     position: fixed;
-    bottom: 5vw;
+    bottom: 8.3vh;
     justify-content: center;
     align-items: center;
 }
@@ -434,8 +438,9 @@ body{
     width: 5.8vw;
     height: 3.5vw;
     background:linear-gradient(to right, #002495 0, #002495 33%, #FFF 33%, #FFF 66%, #ed2939 66%, #ed2939 100%); 
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);    position: fixed;
-    bottom: 5vw;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);    
+    position: fixed;
+    bottom: 8.3vh;
     z-index: 2;
     justify-content: center;
     align-items: center;
@@ -445,6 +450,8 @@ body{
     transition: ease 0.5s;
     display: flex;
     width: 5vw;
+    min-width: 60px;
+    min-height: 40px;
     height: 4vw;
     background-color: crimson;
     position: fixed;
