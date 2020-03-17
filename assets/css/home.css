@@ -78,6 +78,8 @@ body{
     display: flex;
     width: 5vw;
     height: 7vw;
+    min-width: 44px;
+    min-height: 59px;
     background-color: crimson;
     position: fixed;
     z-index: 2;

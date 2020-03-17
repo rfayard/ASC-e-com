@@ -15,7 +15,7 @@
 <body>
   
 
-        <a href="{{ path('home') }}">RETOUR</a>
+        <a class="returnButton" href="{{ path('home') }}">RETOUR</a>
 
  
 
@@ -47,68 +47,76 @@
             </div>  
 
 
-<div class="container-fluid p-5">
-    <div class="row">
-        <div class="col-md-4 p-3 imgBox ">
-            <img class="w-100 imgBox" src="{{ asset('build/images/' ~ product.image) }}" alt="{{ product.name }}">
-            <div class=" d-none d-md-block">
-                <img class="imgBox1" src="{{ asset('build/images/' ~ product.image) }}">
-            </div>
-            {# <div class="border-bottom mt-5"></div> #}
-        </div>
-        <div class="col-md-5 p-3">
-            <h4>{{ product.name }}</h4>
-            <blockquote class="">
-                <p>{{ product.description }}</p>
-            </blockquote>
-        </div>
-        <div class="col-md-3 p-5 text-center">
-            <h3 class="font-weight-bold text-danger">{{ product.getPriceAllTaxesIncluded() }} €</h3>
-            <a class="btn btn-success font-weight-bold mt-5" href="#">Ajouter au Panier</a>
-        </div>
-    </div>
-
-    <div class="border-bottom mt-5"></div>
-
-    <h4 class="mt-5">Nos clients ont déjà sauté le pas. Et vous ?</h4>
-
-    <div class="row mt-5">
-        {% for otherproduct in otherproducts %}
-            {% if product.id != otherproduct.id %}
-                <div class="card col-lg-3 col-md-4">
-                    <div class="h-100"><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none; color:black; font-weight:bold">
-                        <img class="w-100" src="{{ asset('build/images/' ~ otherproduct.image) }}"> </a>
-                    </div>
-                    <div class="py-3">
-                        <h5 class="card-title"><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ otherproduct.name }}</a></h5>
-                        <h6><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
-                        <h6 class="text-danger pt-3">{{ product.getPriceAllTaxesIncluded() }} €</h6>
-                    </div>
-                </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-    
-    <h4 class="mt-5 text-info">La deuxième façon d'affichage</h4>
-    <h4 class="mt-5">Nos clients ont déjà sauté le pas. Et vous ?</h4>
-    <div class="row mt-5">
-        {% for otherproduct in otherproducts %}
-            {% if product.id != otherproduct.id %}
-                <div class="card col-lg-3 col-md-4">
-                    <div class="h-100 dd position-relative">
-                        <a class="ddd" href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none; color:black; font-weight:bold">
-                            <img class="w-100 dd " src="{{ asset('build/images/' ~ otherproduct.image) }}"> 
-                        </a>
-                        <div class="dddd position-absolute">
-                            <p><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></p>
-                            <h6 class="text-danger pt-3 ">{{ product.getPriceAllTaxesIncluded() }} €</h6>
+        <div class="pageContainerProduct">    
+            <div class="container-fluid p-5">
+                <div class="row">
+                    <div class="col-md-4 p-3 imgBox ">
+                        <img class="w-100 imgBox" src="{{ asset('build/images/' ~ product.image) }}" alt="{{ product.name }}">
+                        <div class=" d-none d-md-block">
+                            <img class="imgBox1" src="{{ asset('build/images/' ~ product.image) }}">
                         </div>
+                        {# <div class="border-bottom mt-5"></div> #}
+                    </div>
+                    <div class="col-md-5 p-3">
+                        <h4>{{ product.name }}</h4>
+                        <blockquote class="">
+                            <p>{{ product.description }}</p>
+                        </blockquote>
+                    </div>
+                    <div class="col-md-3 p-5 text-center">
+                        <h3 class="font-weight-bold text-danger">{{ product.getPriceAllTaxesIncluded() }} €</h3>
+                        <a class="btn btn-success font-weight-bold mt-5" href="#">Ajouter au Panier</a>
                     </div>
                 </div>
-            {% endif %}
-        {% endfor %}
-    </div>
 
-</div>
+                <div class="border-bottom mt-5"></div>
 
+                <h4 class="mt-5">Nos clients ont déjà sauté le pas. Et vous ?</h4>
+
+                <div class="row mt-5">
+                    {% for otherproduct in otherproducts %}
+                        {% if product.id != otherproduct.id %}
+                            <div class="card col-lg-3 col-md-4">
+                                <div class="h-100"><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none; color:black; font-weight:bold">
+                                    <img class="w-100" src="{{ asset('build/images/' ~ otherproduct.image) }}"> </a>
+                                </div>
+                                <div class="py-3">
+                                    <h5 class="card-title"><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ otherproduct.name }}</a></h5>
+                                    <h6><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></h6>
+                                    <h6 class="text-danger pt-3">{{ product.getPriceAllTaxesIncluded() }} €</h6>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <h4 class="mt-5 text-info">La deuxième façon d'affichage</h4>
+                <h4 class="mt-5">Nos clients ont déjà sauté le pas. Et vous ?</h4>
+                <div class="row mt-5">
+                    {% for otherproduct in otherproducts %}
+                        {% if product.id != otherproduct.id %}
+                            <div class="card col-lg-3 col-md-4">
+                                <div class="h-100 dd position-relative">
+                                    <a class="ddd" href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none; color:black; font-weight:bold">
+                                        <img class="w-100 dd " src="{{ asset('build/images/' ~ otherproduct.image) }}"> 
+                                    </a>
+                                    <div class="dddd position-inherit">
+                                        <p><a href="{{ path('product', {'id': otherproduct.id, 'cat_id': category.id}) }}" style="text-decoration:none" class="text-dark">{{ product.description|striptags|slice(0, 70)|raw }}...</a></p>
+                                        <h6 class="text-danger pt-3 ">{{ product.getPriceAllTaxesIncluded() }} €</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+
+            {# <div class="footer">
+                <a href="https://fr-fr.facebook.com/" class="instagram">Facebook</a>
+                <a href="https://twitter.com/" class="instagram">Twitter</a>
+                <a href="https://www.instagram.com/?hl=fr" class="instagram">Instagram</a>
+                <a href="mailto:lateamdespeignezizi@onlineformapro.com" class="instagram">Contact</a>
+            </div>   #}
 </body>

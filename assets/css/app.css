@@ -92,7 +92,7 @@ body{
 .boutonLogo{
     display: flex;
     width: 14.25vw;
-    height: 15vw;
+    height: 12.1vw;
     min-width: 135px;
     min-height: 142px;
     background-color: crimson;
@@ -391,6 +391,8 @@ body{
     display: flex;
     width: 5vw;
     height: 4vw;
+    min-width: 66px;
+    min-height: 50px;
     background-color: crimson;
     position: fixed;
     bottom: 0;
@@ -450,4 +452,12 @@ body{
     margin-top: 1vh;
     margin-left: 1vh;
     clip-path: polygon(100% 0, 100% 52%, 65% 100%, 0 100%, 0 0);
+}
+
+.pageContainerProduct{
+    display: flex;
+    width: 76vw;
+    justify-content: center;
+    margin-left: 12vw;
+    margin-top: 19vh;
 }
