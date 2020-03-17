@@ -1,4 +1,7 @@
-
+/* html {
+    scroll-behavior: smooth;
+  }
+   */
 body{
     display: flex;
     width: 100vw;

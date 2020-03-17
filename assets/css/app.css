@@ -1,7 +1,9 @@
 @import "~bootstrap";
 
 
-
+html {
+    scroll-behavior: smooth;
+  }
 
 body{
     display: flex;

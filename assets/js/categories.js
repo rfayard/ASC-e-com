@@ -58,6 +58,7 @@ function responsivePad(){
     boutonEspaceClient[0].classList.add("boutonEspaceClientPad");
 }
 
+
 function responsivePhone(){
     console.log("on passe en vertical");
     for (let i = 0; i < listeCategories.length; i++) {
