@@ -8,3 +8,4 @@ easy_admin:
           - {entity: 'Products', icon: 'tshirt', label: 'Products'}
           - {entity: 'User', icon: 'user', label: 'User'}
           - {entity: 'Deals', icon: 'medal', label: 'Deals'}
+          - {entity: 'Bills', icon: 'receipt', label: 'Bills'}

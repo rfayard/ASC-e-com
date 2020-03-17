@@ -6,3 +6,16 @@ easy_admin:
         actions:
           - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary'}
           - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
+      form:
+        fields:
+          - 'name'
+          - 'description'
+          - {property: 'image', type: 'file'}
+          - 'price_without_taxes'
+          - 'price_all_taxes_included'
+          - 'is_available'
+          - 'product_stock'
+          - 'times_purchased'
+          - 'has_different_sizes'
+          - 'has_different_colors'
+          - 'categories'

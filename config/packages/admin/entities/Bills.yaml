@@ -1,0 +1,8 @@
+easy_admin:
+  entities:
+    Bills:
+      class: App\Entity\Bills
+      list:
+        actions:
+          - {name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary'}
+          - {name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger'}
