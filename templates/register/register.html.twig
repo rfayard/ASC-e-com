@@ -1,10 +1,24 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} Register {% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {# {{ encore_entry_script_tags('categories') }} #}
+        {% endblock %}
 
-{% block title %}Register{% endblock %}
+</head>
 
-{% block body %}
+<body>
+  
+
+
     <h1>Register</h1>
-        <a href="{{ path('home') }}">RETOUR</a>
+
+        <a class="returnButton" href="{{ path('home') }}">RETOUR</a>
 
     {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.email) }}
@@ -13,4 +27,6 @@
 
         <button class="btn btn-primary">Register</button>
     {{ form_end(registrationForm) }}
-{% endblock %}
+
+
+</body>

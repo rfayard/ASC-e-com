@@ -1,3 +1,4 @@
+
 <?php
 
 namespace App\Controller;
@@ -10,6 +11,7 @@ use App\Entity\Deals;
 use App\Entity\Products;
 use App\Entity\Reviews;
 use App\Entity\User;
+
 
 class HomePageController extends AbstractController
 {

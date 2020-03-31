@@ -1,17 +1,35 @@
-{% extends 'base.html.twig' %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %} Register {% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+        {% block javascripts %}
+            {# {{ encore_entry_script_tags('categories') }} #}
+        {% endblock %}
 
-{% block body %}
-        <a href="{{ path('home') }}">RETOUR</a>
-    <h1>Inscription</h1>
+</head>
 
-{{form_start(form)}}
-{{form_row(form.first_name, {'label': 'Prénom','attr': {'placeholder':'Giorno'}})}}
-{{form_row(form.last_name, {'label': 'Nom','attr': {'placeholder':'Giovanna'}})}}
-{{form_row(form.date_of_birth, {'label': 'Date de naissance'})}}
-{{form_row(form.email, {'label': 'Adresse email','attr': {'placeholder':'goldexperience@requiem.jo'}})}}
-{{form_row(form.username, {'label': 'Nom d\'utilisateur','attr': {'placeholder':'giogio85'}})}}
-    {{form_row(form.password, {'label': 'Mot de passe','attr': {'placeholder':'g0ld3nw1nd'}})}}
-    {{form_row(form.confirm_password, {'label': 'Confirmation du mot de passe','attr': {'placeholder':'g0ld3nw1nd'}})}}
-    <button type="submit" class="btn btn-success">Inscription !</button>
-    {{form_end(form)}}
-{% endblock %}
+<body>
+  
+
+
+<div class="centered"><h1 >Inscription</h1></div>
+        <a class="returnButton" href="{{ path('home') }}">RETOUR</a>
+
+    <div class="containerCentre">
+        {{form_start(form)}}
+        {{form_row(form.first_name, {'label': 'Prénom','attr': {'placeholder':'Giorno'}})}}
+        {{form_row(form.last_name, {'label': 'Nom','attr': {'placeholder':'Giovanna'}})}}
+        {{form_row(form.date_of_birth, {'label': 'Date de naissance'})}}
+        {{form_row(form.email, {'label': 'Adresse email','attr': {'placeholder':'goldexperience@requiem.jo'}})}}
+        {{form_row(form.username, {'label': 'Nom d\'utilisateur','attr': {'placeholder':'giogio85'}})}}
+            {{form_row(form.password, {'label': 'Mot de passe','attr': {'placeholder':'g0ld3nw1nd'}})}}
+            {{form_row(form.confirm_password, {'label': 'Confirmation du mot de passe','attr': {'placeholder':'g0ld3nw1nd'}})}}
+            <button type="submit" class="btn btn-success">Inscription !</button>
+            {{form_end(form)}}
+    </div>
+
+</body>
