@@ -5,9 +5,12 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;     
+use Symfony\Component\HttpFoundation\File\File;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductsRepository")
+ * @Vich\Uploadable ()
  */
 class Products
 {
@@ -30,8 +33,15 @@ class Products
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @var string
      */
     private $image;
+
+    /**
+     * @Vich\UploadableField(mapping="product_image", fileNameProperty="image")
+     * @var File
+     */
+    private $imageFile;
 
     /**
      * @ORM\Column(type="float")
@@ -84,7 +94,7 @@ class Products
     private $bills;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Categories", mappedBy="products")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Categories", mappedBy="products", cascade={"persist"})
      */
     private $categories;
 
@@ -93,6 +103,16 @@ class Products
      */
     private $deals;
 
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $createdAt;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $updatedAt;
+
     public function __construct()
     {
         $this->reviews = new ArrayCollection();
@@ -100,6 +120,8 @@ class Products
         $this->bills = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->deals = new ArrayCollection();
+        $this->createdAt = new \DateTime();
+        $this->updatedAt = new \DateTime();
     }
 
     public function getId(): ?int
@@ -136,11 +158,29 @@ class Products
         return $this->image;
     }
 
-    public function setImage(string $image): self
+    public function setImage(?string $image): self
     {
         $this->image = $image;
 
         return $this;
+    }
+
+    public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
     }
 
     public function getPriceWithoutTaxes(): ?float
@@ -373,5 +413,29 @@ class Products
     public function __toString() 
     {
         return $this->name;
+    }
+
+    public function getCreatedAt(): ?\DateTimeInterface
+    {
+        return $this->createdAt;
+    }
+
+    public function setCreatedAt(?\DateTimeInterface $createdAt): self
+    {
+        $this->createdAt = $createdAt;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
     }
 }

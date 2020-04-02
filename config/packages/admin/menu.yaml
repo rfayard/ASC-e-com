@@ -4,8 +4,10 @@ easy_admin:
       - label: 'e-commerce'
         icon: 'store'
         children:
-          - {entity: 'Categories', icon: 'store-alt', label: 'Categories'}
-          - {entity: 'Products', icon: 'tshirt', label: 'Products'}
-          - {entity: 'User', icon: 'user', label: 'User'}
-          - {entity: 'Deals', icon: 'medal', label: 'Deals'}
-          - {entity: 'Bills', icon: 'receipt', label: 'Bills'}
+          - { entity: 'Categories', icon: 'store-alt', label: 'Categories' }
+          - { entity: 'Products', icon: 'tshirt', label: 'Products' }
+          - { entity: 'Deals', icon: 'medal', label: 'Deals' }
+          - { entity: 'Bills', icon: 'receipt', label: 'Bills' } 
+          - { entity: 'User', icon: 'user', label: 'User' }
+      # -  {label: "Settings" }
+      # - { entity: 'User', icon: 'user', label: 'User' }
