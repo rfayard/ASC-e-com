@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ProductsRepository")
@@ -74,11 +74,6 @@ class Products
     private $reviews;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Cart", mappedBy="products")
-     */
-    private $carts;
-
-    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Bills", mappedBy="products")
      */
     private $bills;
@@ -93,13 +88,18 @@ class Products
      */
     private $deals;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\CartProducts", mappedBy="products", orphanRemoval=true)
+     */
+    private $cartProducts;
+
     public function __construct()
     {
         $this->reviews = new ArrayCollection();
-        $this->carts = new ArrayCollection();
         $this->bills = new ArrayCollection();
         $this->categories = new ArrayCollection();
         $this->deals = new ArrayCollection();
+        $this->cartProducts = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -259,34 +259,6 @@ class Products
     }
 
     /**
-     * @return Collection|Cart[]
-     */
-    public function getCarts(): Collection
-    {
-        return $this->carts;
-    }
-
-    public function addCart(Cart $cart): self
-    {
-        if (!$this->carts->contains($cart)) {
-            $this->carts[] = $cart;
-            $cart->addProduct($this);
-        }
-
-        return $this;
-    }
-
-    public function removeCart(Cart $cart): self
-    {
-        if ($this->carts->contains($cart)) {
-            $this->carts->removeElement($cart);
-            $cart->removeProduct($this);
-        }
-
-        return $this;
-    }
-
-    /**
      * @return Collection|Bills[]
      */
     public function getBills(): Collection
@@ -365,6 +337,37 @@ class Products
         if ($this->deals->contains($deal)) {
             $this->deals->removeElement($deal);
             $deal->removeProduct($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|CartProducts[]
+     */
+    public function getCartProducts(): Collection
+    {
+        return $this->cartProducts;
+    }
+
+    public function addCartProduct(CartProducts $cartProduct): self
+    {
+        if (!$this->cartProducts->contains($cartProduct)) {
+            $this->cartProducts[] = $cartProduct;
+            $cartProduct->setProducts($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCartProduct(CartProducts $cartProduct): self
+    {
+        if ($this->cartProducts->contains($cartProduct)) {
+            $this->cartProducts->removeElement($cartProduct);
+            // set the owning side to null (unless already changed)
+            if ($cartProduct->getProducts() === $this) {
+                $cartProduct->setProducts(null);
+            }
         }
 
         return $this;

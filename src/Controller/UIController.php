@@ -67,9 +67,18 @@ class UIController extends AbstractController
                 $entityManager->flush();
             }
 
-            $products = $cart->getProducts();
+            $cartProducts = $cart->getCartProducts();
+            $cartProducts = $cartProducts->toArray();
 
-            dd($products);
+            $products = [];
+
+            foreach ($cartProducts as $cp) {
+                array_push($products, $cp);
+            }
+
+            // $products = $cartProducts->getProducts();
+
+            // dd($products);
 
             return $this->render('ui/cart.html.twig', [
                 'products' => $products
@@ -92,20 +101,28 @@ class UIController extends AbstractController
                 $cart->setUser($user);
             }
 
-            $products = $cart->getProducts();
+            $cartProducts = $cart->getCartProducts();
+            $cartProducts = $cartProducts->toArray();
 
-            foreach($products as $item) {
-                if ($item->getId() == $id) {
-                    $cart->removeProduct($item);
+            foreach($cartProducts as $cp) {
+                if ($cp->getId() == $id) {
+                    $cart->removeCartProduct($cp);
                     $entityManager->persist($cart);
                     $entityManager->flush();
                 }
+            }
+
+            $products = [];
+
+            foreach ($cartProducts as $cp) {
+                array_push($products, $cp);
             }
 
             return $this->render('ui/cart.html.twig', [
                 'products' => $products
             ]);
         }
+
         else {
             return $this->render('ui/not_connected.html.twig');
         }

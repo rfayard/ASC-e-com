@@ -25,25 +25,26 @@
 							</div>
 							<div class="col-12 text-sm-center col-sm-12 text-md-left col-md-6">
 								<h4 class="product-name">
-									<strong>{{product.name}}</strong>
+									<strong>{{product.products.name}}</strong>
 								</h4>
 								<h4>
-									<small>{{product.description}}</small>
+									<small>{{product.products.description}}</small>
 								</h4>
 							</div>
 							<div class="col-12 col-sm-12 text-sm-center col-md-4 text-md-right row">
 								<div class="col-3 col-sm-3 col-md-6 text-md-right" style="padding-top: 5px">
 									<h6>
-										<strong>{{product.getPriceAllTaxesIncluded}}€
+										<strong class="price" id="{{product.id}}">{{product.products.getPriceAllTaxesIncluded}}</strong>
+										<strong>€
 											<span class="text-muted">x</span>
 										</strong>
 									</h6>
 								</div>
 								<div class="col-4 col-sm-4 col-md-4">
 									<div class="quantity">
-										<input type="button" value="+" class="plus">
-										<input type="number" step="1" max="99" min="1" value="{{product}}" title="Qty" class="qty" size="4">
-										<input type="button" value="-" class="minus">
+										<input id="plus{{product.id}}" type="button" value="+" class="plus" onclick="changeValue('#qty{{product.id}}', 'plus', {{product.products.getPriceAllTaxesIncluded}})">
+										<input id="qty{{product.id}}" type="number" step="1" max="99" min="1" value="{{product.quantity}}" title="Qty" class="qty" size="4" readonly>
+										<input id="minus{{product.id}}" type="button" value="-" class="minus" onclick="changeValue('#qty{{product.id}}', 'minus', {{product.products.getPriceAllTaxesIncluded}})">
 									</div>
 								</div>
 								<div class="col-2 col-sm-2 col-md-2 text-right">
@@ -78,7 +79,12 @@
 						<a href="" class="btn btn-success pull-right">Valider mon panier</a>
 						<div class="pull-right" style="margin: 5px">
 							Total price:
-							<b>50.00€</b>
+							{% set total = 0 %}
+							{% for product in products %}
+								{% set total = total + (product.products.getPriceAllTaxesIncluded * product.quantity) %}
+							{% endfor %}
+							<b id="total">{{total}}</b>
+							<b>€</b>
 						</div>
 					</div>
 				</div>
@@ -87,4 +93,35 @@
 	{% else %}
 		<h3>Votre panier est vide...</h3>
 	{% endif %}
+	<script>
+		function total() {
+let prices = document.querySelectorAll(".price");
+let total = 0;
+let id = prices.id;
+for (x of prices) {
+let id = x.id;
+let qtyId = "#qty" + id;
+let price = parseInt(x.innerHTML, 10);
+let qty = document.querySelector(qtyId).value;
+total += price * qty;
+}
+let totalElmnt = document.querySelector("#total");
+totalElmnt.innerHTML = total;
+}
+
+function changeValue(elmnt, type, price) {
+let qty = document.querySelector(elmnt);
+let total = document.querySelector("#total");
+let current = parseInt(total.innerHTML, 10);
+if (type == "plus" && qty.value < 99) {
+qty.value ++
+current += price;
+} else if (type == "minus" && qty.value > 1) {
+qty.value --
+current -= price;
+}
+total.innerHTML = current;
+}
+total();
+	</script>
 {% endblock %}
