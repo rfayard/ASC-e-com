@@ -6,11 +6,23 @@ easy_admin:
         actions:
           - { name: 'edit', icon: 'pencil', label: false, css_class: 'btn btn-secondary' }
           - { name: 'delete', icon: 'trash', label: false, css_class: 'btn btn-danger' }
+        fields:
+          - 'name'
+          # - 'description'
+          # - 'price_without_taxes'
+          - 'price_all_taxes_included'
+          - 'is_available'
+          - 'product_stock'
+          # - 'times_purchased'
+          - 'has_different_sizes'
+          - 'has_different_colors'
+          - 'createdAt'
+          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
       form:
         fields:
           - 'name'
           - 'description'
-          - { property: 'imageFile', type: 'file' }
+          - { property: 'imageFile', type: 'vich_image' }
           - 'price_without_taxes'
           - 'price_all_taxes_included'
           - 'is_available'
