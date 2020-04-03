@@ -82,7 +82,7 @@ Encore
     //.addEntry('admin', './assets/js/admin.js')
 
     .copyFiles({
-        from: './assets/images',
+        from: '../assets/images',
         to: 'images/[path][name].[hash:8].[ext]',
         pattern: /\.(png|jpg|jpeg)$/
     })

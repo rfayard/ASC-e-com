@@ -17,12 +17,14 @@ easy_admin:
           - 'has_different_sizes'
           - 'has_different_colors'
           - 'createdAt'
-          - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
+          - { property: 'image', template: 'vich_uploader_image.html.twig' }
+          # - { property: 'image', type: 'image', base_path: 'public/build/images/' }
       form:
         fields:
           - 'name'
           - 'description'
-          - { property: 'imageFile', type: 'vich_image' }
+          - { property: 'imageFile', type: 'file' }
+          # - { property: 'imageFile', type: 'vich_image' }
           - 'price_without_taxes'
           - 'price_all_taxes_included'
           - 'is_available'
@@ -32,10 +34,6 @@ easy_admin:
           - 'has_different_colors'
           - { property: 'categories', type_options: {by_reference: false} }
           # - 'categories'
-        # list:
-        #   fields:
-        #     - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
-        #     # ...
         # show:
         #   fields:
         #     - { property: 'image', type: 'image', base_path: '%app.path.product_images%' }
